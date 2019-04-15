@@ -6,6 +6,10 @@ import org.junit.Test;
  * @Description:
  */
 public class LambdaTest {
+
+    /**
+     * 模板
+     */
     @Test
     public void test(){
         System.out.println(1);
@@ -14,9 +18,21 @@ public class LambdaTest {
 //        @Test
         System.out.println();
     }
+
     @Test
-    public   void runable(){
+    public void oldRunable(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("我是匿名类的线程");
+            }
+        }).start();
+    }
+
+    @Test
+    public   void newRunable(){
         new Thread(() -> System.out.println("it is a lambda")).start();
     }
-    @
+
+
 }
