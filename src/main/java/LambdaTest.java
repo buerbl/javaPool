@@ -14,10 +14,7 @@ public class LambdaTest {
     public void test(){
         System.out.println(1);
     }
-    public static void main(String[] args) {
-//        @Test
-        System.out.println();
-    }
+
 
     @Test
     public void oldRunable(){
