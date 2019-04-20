@@ -1,6 +1,8 @@
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Resource;
 import java.util.Random;
 
 /**
@@ -24,5 +26,16 @@ public class Log {
         for(int i = 0; i < 50; i ++){
             System.out.println(new Random().nextInt(a));
         }
+    }
+
+    @Resource
+    private interfaceTest aa;
+
+    public void d(){
+        System.out.println(111);
+    }
+    @Test
+    public void z(){
+        d();
     }
 }
