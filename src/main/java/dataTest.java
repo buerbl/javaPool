@@ -14,7 +14,7 @@ import java.util.Date;
 public class dataTest {
     @Test
     public void test(){
-        System.out.printf("撒2daa");
+        System.out.printf("撒");
         System.out.println(new Date());
     }
 
