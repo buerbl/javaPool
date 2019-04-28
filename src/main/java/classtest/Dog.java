@@ -9,6 +9,7 @@ import org.junit.Test;
  * @description test
  */
 public class Dog extends Animal {
+    private int sex;
 
 
      @Test
