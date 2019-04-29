@@ -22,7 +22,7 @@ public class StringTest {
 public class StringTest {
     @Test
     public void buildTest(){
-        //线程安全类
+        //线程安ss全类
         StringBuffer sb = new StringBuffer();
         sb.append("aa");
         sb.append("bb");
