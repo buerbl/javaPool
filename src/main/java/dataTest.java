@@ -3,6 +3,7 @@ import lombok.Setter;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.UUID;
 
 
 /**
@@ -39,7 +40,8 @@ public class dataTest {
         User2 user2 = new User2();
         user1.setId(1);
 //        user1 = user2;
-        System.out.println(user1.getClass().getName());
+//        System.out.println(user1.getClass().getName());
+        System.out.println(UUID.randomUUID().toString());
     }
 
 
