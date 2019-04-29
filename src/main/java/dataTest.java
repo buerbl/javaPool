@@ -15,6 +15,7 @@ import java.util.UUID;
 public class dataTest {
     @Test
     public void test(){
+        System.out.printf("撒");
         System.out.println(new Date());
     }
 
