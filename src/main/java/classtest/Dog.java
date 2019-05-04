@@ -8,9 +8,17 @@ import org.junit.Test;
  * @create 2019/4/28 10:06
  * @description test
  */
-public class Dog extends Animal {
-    private int sex;
+public class Dog
+        extends Animal
+{
 
+
+    //使用父类属性
+    @Test
+    public void useTest(){
+//        Animal animal = new Animal();
+//        System.out.println(animal);
+    }
 
      @Test
 //    @Override
@@ -23,7 +31,7 @@ public class Dog extends Animal {
     @Test
     //使用父方法
     public void method() {
-        Dog dog = new Dog();
-        dog.eat();
+//        Dog dog = new Dog();
+//        dog.eat();
     }
 }

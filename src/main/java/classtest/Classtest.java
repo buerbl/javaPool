@@ -9,12 +9,19 @@ import org.junit.Test;
  */
 public class Classtest {
     @Test
+    public void defaultTest(){
+        Animal animal  = new Animal();
+        System.out.println(animal.name);
+    }
+
+
+    @Test
     public void equalTestByObject(){
-        Dog dog = new Dog();
-        Animal animal = new Animal();
+//        Dog dog = new Dog();
+//        Animal animal = new Animal();
 //        dog = animal;
         //父类级别高，类比数据类型装换
-        animal = dog;
+//        animal = dog;
 //        System.out.println(animal);
         int a = 1;
         double b =  1.1;
@@ -22,5 +29,7 @@ public class Classtest {
         //返回对象 Double.valueOf()
 
     }
+
+
 
 }

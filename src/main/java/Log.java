@@ -11,7 +11,7 @@ import java.util.Random;
  * @Description:使用sjf4的log打印
  */
 public class Log {
-//    private final static Logger logger = LoggerFactory.getLogger(Log.class);
+    private final static Logger logger = LoggerFactory.getLogger(Log.class);
 
 //    public static class A{
 //        static   int b = 1;
