@@ -11,5 +11,13 @@ public class YuTest {
         System.out.println(true||false);
     }
 
+    @Test
+    public void dayu(){
+        if(1>0){
+            System.out.println(1>0);
+            System.out.println(1);
+        }
+    }
+
 
 }
