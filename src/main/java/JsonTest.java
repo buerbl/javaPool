@@ -15,7 +15,8 @@ public class JsonTest {
     @Setter@Getter
     class Name{
         private BigDecimal name;
-        private Integer pass;
+        private String pass="dsds";
+        private Integer pass1;
 
     }
     @Test
@@ -23,9 +24,17 @@ public class JsonTest {
 //        String old = "name";
         Name name = new Name();
         name.setName(BigDecimal.valueOf(0));
-        name.setPass(1);
-        String str = JSONObject.toJSONString(name);
+        String str = JSONObject.toJSONString(name, Boolean.parseBoolean("ss"));
+        name.setPass("3");
+        String str1 = JSONObject.toJSONString(name);
         System.out.println(str);
+
+        //
+        JSONObject obj = new JSONObject();
+        obj.put("name", name.getPass());
+        System.out.println(obj);
+
+
         String s2 = new Gson().toJson(name.pass);
         System.out.println(s2);
     }
