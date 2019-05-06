@@ -1,4 +1,5 @@
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.Test;
@@ -15,7 +16,7 @@ public class JsonTest {
     class Name{
         private BigDecimal name;
         private String pass="dsds";
-        private Integer pass;
+        private Integer pass1;
 
     }
     @Test
@@ -24,8 +25,8 @@ public class JsonTest {
         Name name = new Name();
         name.setName(BigDecimal.valueOf(0));
         String str = JSONObject.toJSONString(name, Boolean.parseBoolean("ss"));
-        name.setPass(1);
-        String str = JSONObject.toJSONString(name);
+        name.setPass("3");
+        String str1 = JSONObject.toJSONString(name);
         System.out.println(str);
 
         //
