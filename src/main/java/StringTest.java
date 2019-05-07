@@ -33,4 +33,19 @@ public class StringTest {
 
         }
     }
+
+
+    @Test
+    public void formatTest(){
+        String userId = "1";
+        String amount= "1";
+        String scene= "1";
+        System.out.println(getClass());
+        String tip = String.format("%s->takeRedpacket:userId=%s,amount=%s,scene=%s",
+                this.getClass().getName(),
+                userId,
+                amount,
+                scene);
+        System.out.println(tip);
+    }
 }
