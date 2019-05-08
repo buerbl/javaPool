@@ -1,3 +1,4 @@
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import lombok.Getter;
@@ -27,15 +28,18 @@ public class JsonTest {
         String str = JSONObject.toJSONString(name, Boolean.parseBoolean("ss"));
         name.setPass("3");
         String str1 = JSONObject.toJSONString(name);
-        System.out.println(str);
+//        System.out.println(str);
 
-        //
         JSONObject obj = new JSONObject();
         obj.put("name", name.getPass());
-        System.out.println(obj);
+        System.out.println(obj.getClass());
+//        System.out.println(obj.getString("name"));
+
+        String a = "{\"name\":\"3\"}";
+        System.out.println(JSONObject.parseObject(a).getString("name"));
 
 
         String s2 = new Gson().toJson(name.pass);
-        System.out.println(s2);
+//        System.out.println(s2);
     }
 }
