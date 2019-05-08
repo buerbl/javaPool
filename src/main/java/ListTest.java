@@ -1,20 +1,29 @@
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @Author: boolean
- * @Date: 2019/5/6 14:18
- * @description:
+ * @Author buer
+ * @create 2019/5/6 23:24
+ * @description
  */
 public class ListTest {
-
     @Test
     public void test(){
+        List<String> list = new LinkedList<String>();
+        for(Integer i = 0; i < 10; i ++){
+            list.add(i, i.toString());
+            System.out.println(list.get(i));
+        }
+String a = "1";
+
+    }
+
+
+    @Test
+    public void test1(){
         List<String> list = new LinkedList<>();
         list.add(0, "{\"name\":\"3\"}");
 //        list.set(1, "1");

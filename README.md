@@ -3,7 +3,7 @@
 
 
 
-###sql语句练习
+###sql语句练习1
 
 ```sql
 DROP TABLE
