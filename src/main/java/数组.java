@@ -18,6 +18,7 @@ public class 数组 {
         System.out.println(c);
         //匿名创建数组
         new  int[] {1,2};
+        p
 
     }
 }
