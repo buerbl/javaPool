@@ -19,6 +19,7 @@ public class 数组 {
         //匿名创建数组
         new  int[] {1,2};
         gffg
+        p
 
     }
 }
