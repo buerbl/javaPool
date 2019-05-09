@@ -33,7 +33,7 @@ buildNumber.properties
 # Compiled class file
 *.class
 
-# Log file
+# LogtTe file
 *.log
 
 # BlueJ files

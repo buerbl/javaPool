@@ -10,8 +10,8 @@ import java.util.Random;
  * @Date: 2019/4/14 21:51
  * @Description:使用sjf4的log打印
  */
-public class Log {
-    private final static Logger logger = LoggerFactory.getLogger(Log.class);
+public class LogtTe {
+    private final static Logger logger = LoggerFactory.getLogger(LogtTe.class);
 
 //    public static class A{
 //        static   int b = 1;

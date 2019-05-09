@@ -48,4 +48,13 @@ public class StringTest {
                 scene);
         System.out.println(tip);
     }
+
+
+    @Test
+    public void equalTest(){
+        String a  = new String("a");
+        String b =a;
+        System.out.println("b==a:" + (b==a));
+        System.out.println("b.equals(a): " +b.equals(a) );
+    }
 }
