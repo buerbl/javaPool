@@ -12,7 +12,6 @@ public class 数组 {
     public  void test(){
 
 
-啊
 
     }
 }
