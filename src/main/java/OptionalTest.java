@@ -14,7 +14,7 @@ public class OptionalTest {
     }
 
     public class User{
-        public String name = "i got you";
+        public String name = null;
 
         public void setName(String name) {
             this.name = name;
@@ -25,17 +25,31 @@ public class OptionalTest {
     }
 }
 
-    @Test
+
     public  String getName1() {
+        /**
+         * user为空则赋值Unknown 否则赋值为user.name
+         */
         User u = new User();
-        return Optional.ofNullable(u)
-                .map(user -> user.name)
-                .orElse("Unknown");
+        //new
+//        return Optional.ofNullable(u)
+//                .map(user -> user.name)
+//                .orElse("Unknown");
+        //old
+        if (u == null){
+            u.setName("Unknown") ;
+        }else {
+
+        }
+        System.out.println(u.getName());
+        return u.toString();
     }
 
     @Test
     public void test(){
-        System.out.println(1);
+        String re =  getName1();
+        System.out.println(re.toString()+"11111111111111111111111");
+
     }
 
 }
