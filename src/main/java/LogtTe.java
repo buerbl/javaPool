@@ -13,6 +13,17 @@ import java.util.Random;
 public class LogtTe {
     private final static Logger logger = LoggerFactory.getLogger(LogtTe.class);
 
+
+    @Test
+    public void test3(){
+        int a = 111;
+        logger.info("aaaaaaa"+ a);
+    }
+    @Test
+    public void loggerTest(){
+        int i = 1;
+        logger.info("下载[{}]图片成功,地址=[{}]", i, i);
+    }
 //    public static class A{
 //        static   int b = 1;
 //    }
