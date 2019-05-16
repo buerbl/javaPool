@@ -1,3 +1,4 @@
+import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,8 @@ public class LogtTe {
     public void test3(){
         //局部变量没有修饰符
         int a = 111;
-
+        long along = 10L;
+        logger.info( "j{}",along);
         logger.info("aaaaaaa"+ a);
     }
     @Test

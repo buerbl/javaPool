@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -44,6 +45,7 @@ public class LambdaTest {
         list.forEach(System.out::println);
 
 
+
     }
 
     @Test
@@ -51,5 +53,9 @@ public class LambdaTest {
         int a =1;
     }
 
-
+    @Test
+    public void test3(){
+        String name = "aaaa1dfssc";
+        System.out.println(Arrays.toString(name.split("1")));
+    }
 }

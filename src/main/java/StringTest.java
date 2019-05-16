@@ -1,5 +1,7 @@
+import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Hashtable;
 
 /**
@@ -56,5 +58,16 @@ public class StringTest {
         String b =a;
         System.out.println("b==a:" + (b==a));
         System.out.println("b.equals(a): " +b.equals(a) );
+    }
+
+    @Test
+    public void test2(){
+        String name= "sasasaQZX1sdasdad";
+//        if (name.contains("QZX") && name.split("QZX").length == 2 && NumberUtils.isDigits(name.split("QZX")[1])){
+//            System.out.println(name);
+//        }
+        System.out.println(Arrays.toString(name.split("QZX")));
+        System.out.println(name.split("QZX")[0]);
+        System.out.println("\uD83D");
     }
 }
