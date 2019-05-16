@@ -16,7 +16,9 @@ public class LogtTe {
 
     @Test
     public void test3(){
+        //局部变量没有修饰符
         int a = 111;
+
         logger.info("aaaaaaa"+ a);
     }
     @Test
