@@ -62,6 +62,7 @@ public class Dog extends Animal {
     }
 
     public void test1(Animal animal){
+        System.out.println("变化");
         //anmial变成了dog类  卧槽卧槽卧槽
         System.out.println(animal.getClass());
         System.out.println(animal.toString());

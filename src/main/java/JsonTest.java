@@ -1,3 +1,4 @@
+import classtest.Animal;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -41,5 +42,17 @@ public class JsonTest {
 
         String s2 = new Gson().toJson(name.pass);
 //        System.out.println(s2);
+    }
+
+
+    class Person{
+        private String  name;
+        private String age;
+    }
+    @Test
+    public void test3(){
+        String name ="{\"name\":\"cjen\"}";
+        Gson gson = new Gson();
+        System.out.println(gson.fromJson(name, Person.class).toString());
     }
 }
