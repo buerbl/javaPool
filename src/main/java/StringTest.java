@@ -70,4 +70,14 @@ public class StringTest {
         System.out.println(name.split("QZX")[0]);
         System.out.println("\uD83D");
     }
+
+    @Test  //split
+    public void test(){
+        String terms = "1dsds,2dsd,3sdsdsdsd";
+        //以 ， 号分割字符串
+        String[] termArray = terms.split(",");
+        for (String termBean : termArray) {
+            System.out.println(termBean);
+        }
+    }
 }
