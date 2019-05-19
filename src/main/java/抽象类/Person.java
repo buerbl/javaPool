@@ -9,7 +9,6 @@ package 抽象类;
 public abstract class Person {
     public abstract String getdDescription();
     private String name;
-
     //可以有构造器
     public Person(String name){
         this.name = name;

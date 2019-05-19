@@ -10,8 +10,7 @@ import org.junit.Test;
  * @create 2019/4/28 10:06
  * @description test
  */
-@Getter
-@Setter
+
 public class Dog extends Animal {
     private  String dogid;
 
@@ -58,7 +57,6 @@ public class Dog extends Animal {
         dog.setDogid("1");
 //        dog = animal;
         test1(dog);
-        test2(dog);
     }
 
     public void test1(Animal animal){
@@ -68,7 +66,26 @@ public class Dog extends Animal {
         System.out.println(animal.toString());
     }
 
-    public void test2(Dog dog){
 
+    @Test
+    public void test2(){
+        Dog dog = new Dog();
+        dog.setDogid("1");
+        System.out.println("前："+dog.toString());
+        setValue(dog);
+        System.out.println("后： "+dog.toString());
+    }
+
+    public Dog setValue(Dog dog1){
+        dog1.setDogid("2");
+        return dog1;
+    }
+
+    public String getDogid() {
+        return dogid;
+    }
+
+    public void setDogid(String dogid1) {
+        this.dogid = dogid1;
     }
 }
