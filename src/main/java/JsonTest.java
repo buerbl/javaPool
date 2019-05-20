@@ -7,13 +7,38 @@ import lombok.Setter;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author: boolean
  * @Date: 2019/4/29 19:24
  * @description:
  */
+@Getter
+@Setter
 public class JsonTest {
+    private String name;
+    private List<String> list;
+    private Integer[] array;
+
+//    public JsonTest(List<String> list) {
+//        this.list = list;
+//        list.add(1, "a");
+//        list.add(2, "b");
+//        list.add(3, "v");
+//    }
+    public void init(JsonTest jsonTest){
+        jsonTest.setName(name = "chen");
+        List<String> list = new ArrayList<>();
+        list.add(0, "a");
+        list.add(1, "b");
+        list.add(2, "c");
+        jsonTest.setList(list);
+        Integer[] array = new Integer[]{1,2,3,4,5,6};
+        jsonTest.setArray(array);
+    }
+
     @Setter@Getter
     class Name{
         private BigDecimal name;
@@ -54,5 +79,17 @@ public class JsonTest {
         String name ="{\"name\":\"cjen\"}";
         Gson gson = new Gson();
         System.out.println(gson.fromJson(name, Person.class).toString());
+    }
+
+    @Test
+    public void test4(){
+        JsonTest jsonTest  = new JsonTest();
+        init(jsonTest);
+        Gson gson = new Gson();
+        String a = gson.toJson(jsonTest);
+        System.out.println(a);
+        String[] stringArray = new String[]{a};
+        System.out.println(gson.toJson(stringArray));
+
     }
 }
