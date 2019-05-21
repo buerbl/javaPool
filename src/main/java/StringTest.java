@@ -73,11 +73,18 @@ public class StringTest {
 
     @Test  //split
     public void test(){
-        String terms = "1dsds,2dsd,3sdsdsdsd";
+        String terms = "1dsds,2dsd,3sdsds,4dsd";
         //以 ， 号分割字符串
         String[] termArray = terms.split(",");
+        System.out.println(termArray.length);
         for (String termBean : termArray) {
             System.out.println(termBean);
         }
+    }
+
+    @Test
+    public void test1(){
+        String name = null;
+        System.out.println(name.length());
     }
 }
