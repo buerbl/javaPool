@@ -32,8 +32,8 @@ public class LogtTe {
 //        static   int b = 1;
 //    }
     public static void main(String[] args) {
-//        String a = "sasasasasa";
-//        System.out.println(String.valueOf(a));
+//        String A = "sasasasasa";
+//        System.out.println(String.valueOf(A));
 
 //        logger.debug("i", A.b);
 //        logger

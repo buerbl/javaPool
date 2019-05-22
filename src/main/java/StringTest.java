@@ -2,6 +2,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
@@ -54,10 +55,10 @@ public class StringTest {
 
     @Test
     public void equalTest(){
-        String a  = new String("a");
+        String a  = new String("A");
         String b =a;
-        System.out.println("b==a:" + (b==a));
-        System.out.println("b.equals(a): " +b.equals(a) );
+        System.out.println("b==A:" + (b==a));
+        System.out.println("b.equals(A): " +b.equals(a) );
     }
 
     @Test
@@ -86,5 +87,6 @@ public class StringTest {
     public void test1(){
         String name = null;
         System.out.println(name.length());
+//        HashMap
     }
 }

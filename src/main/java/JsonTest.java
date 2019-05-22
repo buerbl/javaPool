@@ -24,14 +24,14 @@ public class JsonTest {
 
 //    public JsonTest(List<String> list) {
 //        this.list = list;
-//        list.add(1, "a");
+//        list.add(1, "A");
 //        list.add(2, "b");
 //        list.add(3, "v");
 //    }
     public void init(JsonTest jsonTest){
         jsonTest.setName(name = "chen");
         List<String> list = new ArrayList<>();
-        list.add(0, "a");
+        list.add(0, "A");
         list.add(1, "b");
         list.add(2, "c");
         jsonTest.setList(list);
