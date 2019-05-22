@@ -18,6 +18,12 @@ public class StringTest {
         System.out.println(v);
     }
 
+    @Test
+    public void formatTest1(){
+        int[] arrys = new int[]{1, 2};
+        String couponInfo = String.format("满%s元减%s元",arrys[0],arrys[1]);
+        System.out.println(couponInfo);
+    }
     /**
      * @Author buer
      * @create 2019/4/27 23:53
@@ -79,5 +85,27 @@ public class StringTest {
         for (String termBean : termArray) {
             System.out.println(termBean);
         }
+
     }
+
+    @Test
+    public void charCompare(){
+//        String
+        char a = 'a';
+        char b = 'b';
+        System.out.println();
+        System.out.println(a>b);
+        System.out.println(a<b);
+    }
+
+    //trim()方法使用 可删除首尾空格 但是没看出
+    @Test
+    public void trimTest(){
+        String name = " che n ";
+        System.out.println("开始的name:"+name);
+
+        System.out.println( name.trim());
+        System.out.println("改变后的name:"+name);
+    }
+
 }

@@ -1,6 +1,10 @@
 package 容器;
 
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * @author buer
@@ -8,4 +12,12 @@ import java.util.HashMap;
  * description
  */
 public class w {
+    @Test
+    public  void test(){
+        int a = 10;
+        String name = null;
+        StringUtils.isNotBlank(name);
+    }
+
+
 }

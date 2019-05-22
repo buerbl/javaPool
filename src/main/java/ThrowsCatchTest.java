@@ -22,6 +22,18 @@ public class ThrowsCatchTest {
 
 
     }
+    @Test
+    public void testThrow(){
+
+        if (true){
+            int a = 1;
+            int b = 0;
+//            int c = a/b;
+            System.out.println("");
+            throw  new RuntimeException("算数中出除数不为0");
+        }
+        System.out.println("我还能执行啊");
+    }
 
 
     public static void main(String[] args) {
