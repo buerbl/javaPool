@@ -14,6 +14,7 @@ import java.util.Random;
 public class w {
     @Test
     public  void test(){
+        System.out.println("dd");
         int a = 10;
         String name = null;
         StringUtils.isNotBlank(name);
