@@ -11,7 +11,7 @@ import java.util.List;
 public class a {
 //    @Test
 //    public static void runable(){
-//        new Thread(() -> System.out.println("it is a lambda")).start();
+//        new Thread(() -> System.out.println("it is A lambda")).start();
 //    }
 //    public static void main(String[] args) {
 //        runable();
@@ -20,7 +20,7 @@ public class a {
 
     public void test2() {
         List a;
-//        System.out.println(a.toString());
+//        System.out.println(A.toString());
     }
 
 

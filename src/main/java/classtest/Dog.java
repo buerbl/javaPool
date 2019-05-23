@@ -37,7 +37,7 @@ public class Dog extends Animal {
          //super关键字
           int a = super.getId();
          Assert.assertEquals(a,1);
-//         System.out.println(a);
+//         System.out.println(A);
     }
     @Test
     //使用父方法

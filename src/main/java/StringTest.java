@@ -2,6 +2,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
@@ -96,6 +97,13 @@ public class StringTest {
         System.out.println();
         System.out.println(a>b);
         System.out.println(a<b);
+    }
+
+    @Test
+    public void test1(){
+        String name = null;
+        System.out.println(name.length());
+//        HashMap
     }
 
     //trim()方法使用 可删除首尾空格 但是没看出
