@@ -1,3 +1,6 @@
+import com.sun.istack.internal.NotNull;
+import lombok.NonNull;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
@@ -39,6 +42,17 @@ public class NPE {
         }
 
 
+    }
+
+    @Test
+    public void test(){
+        String name;
+        name =null;
+
+        if (StringUtils.isNotEmpty(name)) {
+            name.toString();
+        }
+        System.out.println(1);
     }
 
 }
