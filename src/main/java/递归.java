@@ -10,7 +10,7 @@ import sun.rmi.runtime.Log;
 public class 递归 {
     @Test
     public void test(){
-       F(10);
+        System.out.println(F(10));;
 
     }
 
