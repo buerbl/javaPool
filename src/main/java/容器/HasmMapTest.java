@@ -81,17 +81,7 @@ public class HasmMapTest {
     }
 
 
-    public int test2(int a){
-        a = a+1;
-        return a;
-    }
 
-
-    @Test
-    public void test2(){
-        int i = 1;
-        System.out.println(test2(i));;
-    }
 
 
 
