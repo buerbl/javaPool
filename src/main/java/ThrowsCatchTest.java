@@ -28,7 +28,7 @@ public class ThrowsCatchTest {
         if (true){
             int a = 1;
             int b = 0;
-//            int c = a/b;
+//            int c = a/HasmMapTest;
             System.out.println("");
             throw  new RuntimeException("算数中出除数不为0");
         }

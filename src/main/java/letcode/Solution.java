@@ -5,10 +5,10 @@ import org.junit.Test;
 /**
  * @author boolean
  * Date: 2019/5/21 14:31
- * description:  https://leetcode-cn.com/problems/two-sum/
+ * description:
  */
 public class Solution {
-    @Test
+    @Test//https://leetcode-cn.com/problems/two-sum/
     public  void  twoSumTest(){
         int[] nums = {2, 7, 11, 15};
         int target = 9;

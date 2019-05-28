@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * @Auther: boolean
@@ -63,14 +64,17 @@ public void newRunable() throws InterruptedException {
     @Test
     public void printTest(){
         List list = new ArrayList();
-        list.add(0,"d");
-        list.add(1, "1");
-        list.add(2, "2");
-        list.add(3, "3");
+//        list.add(0,"d");
+//        list.add(1, "1");
+//        list.add(2, "2");
+//        list.add(3, "3");
+        for (int i = 0; i < 10; i ++){
+            list.add(i, i);
+        }
 //        System.out.println(list.toString());
         list.forEach(System.out::println);
-        System.out.println("=======================================");
-        list.forEach((n) -> System.out.println());
+        System.out.println("==================我是分割线=====================");
+//        list.forEach(n -> );
 
 
 

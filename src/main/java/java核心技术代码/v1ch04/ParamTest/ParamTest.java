@@ -34,10 +34,10 @@ public class ParamTest
       Employee a = new Employee("Alice", 70000);
       Employee b = new Employee("Bob", 60000);
       System.out.println("Before: a=" + a.getName());
-      System.out.println("Before: b=" + b.getName());
+      System.out.println("Before: HasmMapTest=" + b.getName());
       swap(a, b);
       System.out.println("After: a=" + a.getName());
-      System.out.println("After: b=" + b.getName());
+      System.out.println("After: HasmMapTest=" + b.getName());
    }
 
    public static void tripleValue(double x) // doesn't work

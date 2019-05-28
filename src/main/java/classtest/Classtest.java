@@ -17,11 +17,11 @@ public class Classtest {
 
     @Test
     public void equalTestByObject(){
-//        Dog dog = new Dog();
-//        Animal animal = new Animal();
-//        dog = animal;
+        Dog dog = new Dog();
+        Animal animal = new Animal();
+        dog = (Dog) animal;
         //父类级别高，类比数据类型装换
-//        animal = dog;
+        animal = dog;
 //        System.out.println(animal);
         int a = 1;
         double b =  1.1;

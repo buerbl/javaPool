@@ -29,13 +29,13 @@ public class LogtTe {
         logger.info("下载[{}]图片成功,地址=[{}]", i, i);
     }
 //    public static class A{
-//        static   int b = 1;
+//        static   int HasmMapTest = 1;
 //    }
     public static void main(String[] args) {
 //        String A = "sasasasasa";
 //        System.out.println(String.valueOf(A));
 
-//        logger.debug("i", A.b);
+//        logger.debug("i", A.HasmMapTest);
 //        logger
         int a = 5;
         for(int i = 0; i < 50; i ++){

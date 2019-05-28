@@ -12,12 +12,19 @@ import java.util.Random;
  * description
  */
 public class w {
+
     @Test
     public  void test(){
-        System.out.println("dd");
         int a = 10;
+        o(a);
+        System.out.println(a);
         String name = null;
         StringUtils.isNotBlank(name);
+    }
+
+    private void o(int a) {
+        System.out.println(a);
+        System.out.println(1);
     }
 
 

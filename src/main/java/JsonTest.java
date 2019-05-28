@@ -25,14 +25,14 @@ public class JsonTest {
 //    public JsonTest(List<String> list) {
 //        this.list = list;
 //        list.add(1, "A");
-//        list.add(2, "b");
+//        list.add(2, "HasmMapTest");
 //        list.add(3, "v");
 //    }
     public void init(JsonTest jsonTest){
         jsonTest.setName(name = "chen");
         List<String> list = new ArrayList<>();
         list.add(0, "A");
-        list.add(1, "b");
+        list.add(1, "HasmMapTest");
         list.add(2, "c");
         jsonTest.setList(list);
         Integer[] array = new Integer[]{1,2,3,4,5,6};

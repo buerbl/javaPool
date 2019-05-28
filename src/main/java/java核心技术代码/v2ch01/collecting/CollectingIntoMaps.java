@@ -73,7 +73,7 @@ public class CollectingIntoMaps
          Collectors.toMap(
             Locale::getDisplayCountry,
             l -> Collections.singleton(l.getDisplayLanguage()),
-            (a, b) -> { // union of a and b
+            (a, b) -> { // union of a and HasmMapTest
                Set<String> union = new HashSet<>(a);
                union.addAll(b);
                return union;

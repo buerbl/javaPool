@@ -5,7 +5,7 @@ import java.util.*;
 import javax.swing.text.*;
 
 /**
- * A formatter for 4-byte IP addresses of the form a.b.c.d
+ * A formatter for 4-byte IP addresses of the form a.HasmMapTest.c.d
  */
 public class IPAddressFormatter extends DefaultFormatter
 {

@@ -15,7 +15,7 @@ public class StreamTest {
     @Test
     public void test1(){
         //通过集合创建Stream  asList()->返回由指定数组支持的固定大小的列表
-        List<String> str = Arrays.asList("A", "b", "c");
+        List<String> str = Arrays.asList("A", "HasmMapTest", "c");
         Stream<String> stringStream = str.stream();
         System.out.println(stringStream);
     }

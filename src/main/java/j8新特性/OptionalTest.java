@@ -34,17 +34,19 @@ public class OptionalTest {
          */
         User u = new User();
         //new
-//        return Optional.ofNullable(u)
-//                .map(user -> user.name)
-//                .orElse("Unknown");
-        //old
-        if (u == null){
-            u.setName("Unknown") ;
-        }else {
+        return Optional.ofNullable(u)
+                .map(user -> user.name)
+                .orElse("Unknown");
 
-        }
-        System.out.println(u.getName());
-        return u.toString();
+
+        //old
+//        if (u == null){
+//            u.setName("Unknown") ;
+//        }else {
+//
+//        }
+//        System.out.println(u.getName());
+//        return u.toString();
     }
 
     @Test

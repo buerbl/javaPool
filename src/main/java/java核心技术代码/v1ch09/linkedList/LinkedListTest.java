@@ -22,7 +22,7 @@ public class LinkedListTest
       b.add("Frances");
       b.add("Gloria");
 
-      // merge the words from b into a
+      // merge the words from HasmMapTest into a
 
       ListIterator<String> aIter = a.listIterator();
       Iterator<String> bIter = b.iterator();
@@ -35,7 +35,7 @@ public class LinkedListTest
 
       System.out.println(a);
 
-      // remove every second word from b
+      // remove every second word from HasmMapTest
 
       bIter = b.iterator();
       while (bIter.hasNext())
@@ -50,7 +50,7 @@ public class LinkedListTest
 
       System.out.println(b);
 
-      // bulk operation: remove all words in b from a
+      // bulk operation: remove all words in HasmMapTest from a
 
       a.removeAll(b);
 

@@ -63,8 +63,8 @@ public class StringTest {
     public void equalTest(){
         String a  = new String("a");
         String b =a;
-        System.out.println("b==a:" + (b==a));
-        System.out.println("b.equals(a): " +b.equals(a) );
+        System.out.println("HasmMapTest==a:" + (b==a));
+        System.out.println("HasmMapTest.equals(a): " +b.equals(a) );
     }
 
     @Test
@@ -93,7 +93,7 @@ public class StringTest {
     public void charCompare(){
 //        String
         char a = 'a';
-        char b = 'b';
+        char b = 'r';
         System.out.println();
         System.out.println(a>b);
         System.out.println(a<b);
@@ -114,6 +114,13 @@ public class StringTest {
 
         System.out.println( name.trim());
         System.out.println("改变后的name:"+name);
+    }
+
+    @Test
+    public void splitTest(){
+        String naee = "ass, sas,";
+        String[] a = naee.split(",");
+
     }
 
 }
