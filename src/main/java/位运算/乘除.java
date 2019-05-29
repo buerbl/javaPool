@@ -17,7 +17,7 @@ public class 乘除 {
 
 
     /**
-     * 测试左移位运算的时间
+     * 测试平常运算的时间
      */
     @Test
     public void test(){
@@ -31,9 +31,13 @@ public class 乘除 {
         System.out.println("平常花费时间：" + (System.currentTimeMillis() - start2) );
     }
 
+    /**
+     * 测试位运算的时间
+     */
     @Test
     public void test1(){
         long start1 = System.currentTimeMillis();
+        logger.debug("s2时间为【{}】",start1);
         for (int j = 0; j < times; j ++){
             int result2 = i << 3;
         }
