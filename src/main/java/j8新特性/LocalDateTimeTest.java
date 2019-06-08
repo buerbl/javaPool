@@ -17,6 +17,7 @@ public class LocalDateTimeTest {
     @Test
     public void test(){
         LocalDateTime now = LocalDateTime.now();
-        logger.debug("当前时间：【{}】", now);
+        logger.debug("sssss");
+        logger.info("当前时间：【{}】", now);
     }
 }
