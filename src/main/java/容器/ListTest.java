@@ -12,13 +12,18 @@ import java.util.*;
 public class ListTest {
     @Test
     public void test(){
-        List aList = new LinkedList();
+        List<Integer> aList = new LinkedList();
         for (int i = 0; i < 10; i ++){
             int num = new Random().nextInt(10);
             aList.add(num);
         }
+
+        for (Integer i : aList){
+            System.out.println(i);
+        }
         aList.forEach(System.out::println);
         for (int i = 0; i < 10; i++){
+            System.out.println(aList.get(i));
         }
 
         aList.forEach(System.out::println);
