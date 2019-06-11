@@ -12,6 +12,6 @@ public class AnimalTest {
     public void privateTest(){
         Animal animal = new Animal();
 //        System.out.println(animal.);
-
+animal.setName(null);
     }
 }

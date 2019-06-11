@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,11 @@ public class ThrowsCatchTest {
         System.out.println("我还能执行啊");
     }
 
+    @Test
+    public void test2(){
+        int  a = 1;
+        Assert.assertEquals(1, a);
+    }
 
     public static void main(String[] args) {
         int a=1;

@@ -76,6 +76,13 @@ public class Dog extends Animal {
         System.out.println("后： "+dog.toString());
     }
 
+
+    @Test
+    public void testFather(){
+        Dog dog = new Dog();
+        System.out.println(dog.name);
+    }
+
     public Dog setValue(Dog dog1){
         dog1.setDogid("2");
         return dog1;

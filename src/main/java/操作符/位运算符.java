@@ -11,7 +11,7 @@ import org.junit.runner.notification.RunListener;
  * 2、按位或“|”
  * 3、按位异或" ^ ”
  */
-public class 按位操作符 {
+public class 位运算符 {
 
     //按位与操作符
     @Test
