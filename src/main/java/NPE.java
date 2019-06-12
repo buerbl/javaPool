@@ -1,9 +1,11 @@
+import com.google.gson.Gson;
 import com.sun.istack.internal.NotNull;
 import lombok.NonNull;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.util.Collections;
 import java.util.Objects;
 
 /**
@@ -54,5 +56,19 @@ public class NPE {
         }
         System.out.println(1);
     }
+
+    //返回空集合
+    @Test
+    public void testEmptyList(){
+        System.out.println(Collections.emptyList());
+        System.out.println(new Gson().toJson(Collections.emptyList()));
+        String a = "chen";
+        int b = 1;
+
+
+        System.out.println(new Gson().toJson(a));
+        System.out.println(new Gson().toJson(b));
+    }
+
 
 }

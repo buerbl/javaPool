@@ -51,6 +51,6 @@ public class LogtTe {
     }
     @Test
     public void z(){
-        d();
+        System.out.println(Thread.currentThread().getId());
     }
 }
