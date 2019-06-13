@@ -8,7 +8,8 @@ import org.junit.Test;
  * description:
  */
 public class Solution {
-    @Test//https://leetcode-cn.com/problems/two-sum/
+    //https://leetcode-cn.com/problems/two-sum/
+    @Test
     public  void  twoSumTest(){
         int[] nums = {2, 7, 11, 15};
         int target = 9;

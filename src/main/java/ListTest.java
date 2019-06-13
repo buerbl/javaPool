@@ -1,6 +1,7 @@
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,6 +20,14 @@ public class ListTest {
         }
 String a = "1";
 
+    }
+
+    @Test
+    public void test2(){
+        List list = new LinkedList();
+        List list1 = new ArrayList();
+        list = list1;
+        System.out.println(list.getClass().getSimpleName());
     }
 
 

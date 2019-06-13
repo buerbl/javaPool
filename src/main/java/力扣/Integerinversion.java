@@ -14,8 +14,6 @@ import org.junit.Test;
 public class Integerinversion {
     public int reverse(int x) {
 
-//        int a = 1;
-//        System.out.println(a/10);
         int tem = x;
         int res = 0;
         while(tem > 0){
@@ -24,16 +22,6 @@ public class Integerinversion {
             tem = tem/10;
             System.out.println(tem);
         }
-
-        System.out.println("===============");
-        System.out.println(res);
-
-//        Object i;
-//        Object j;
-//        if (i < j){
-//
-//        }
-
         return 1;
 
     }
