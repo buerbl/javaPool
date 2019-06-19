@@ -1,8 +1,9 @@
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -24,5 +25,23 @@ public class DateTest {
 //                Date()
 
         System.out.println(LocalDate.now());
+    }
+
+    @Test
+    public void test(){
+        System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd 00:00:00").getClass().getSimpleName());
+        System.out.println(LocalDateTime.of(LocalDate.now(), LocalTime.MIN));
+        System.out.println(LocalDateTime.of(LocalDate.now(), LocalTime.MIN).getClass().getSimpleName());
+
+//        return Date.from(startOfDay.atZone(ZoneId.systemDefault()).toInstant());
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date zero = calendar.getTime();
+        System.out.println(zero);
+
     }
 }
