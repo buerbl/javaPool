@@ -28,14 +28,13 @@ public class PersonService {
         list.add(new Person("老王", convert("2019-05-11")));
         list.add(new Person("小明", convert("2019-05-12")));
         list.add(new Person("叫兽", convert("2019-05-09")));
-        System.out.println(list); //执行结果：[Person{name='三炮', age=48}, Person{name='老王', age=35}, Person{name='小明', age=8}, Person{name='叫兽', age=70}]
+        System.out.println(list);
         //按年龄升序
         list.sort((a, b) -> a.getAge().compareTo(b.getAge()));
-        System.out.println(list);//执行结果：[Person{name='小明', age=8}, Person{name='老王', age=35}, Person{name='三炮', age=48}, Person{name='叫兽', age=70}]
+        System.out.println(list);
         //按年龄降序
         list.sort((a, b) -> b.getAge().compareTo(a.getAge()));
-        System.out.println(list);//执行结果：[Person{name='叫兽', age=70}, Person{name='三炮', age=48}, Person{name='老王', age=35}, Person{name='小明', age=8}]
-        //如果按姓名排序，其实就是按字符串排序一样
+        System.out.println(list);
     }
 
     private Date convert(String time){
