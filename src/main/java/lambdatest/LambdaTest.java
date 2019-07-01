@@ -1,3 +1,5 @@
+package lambdatest;
+
 import org.junit.Test;
 
 import javax.swing.*;
