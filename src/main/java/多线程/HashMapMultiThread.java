@@ -2,14 +2,16 @@ package 多线程;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author boolean
  * Date: 2019/7/3 20:00
- * description:并发下的HashMap 1.8版本目前不会测试不会导致死循环 比1.7jdk好
+ * description:并发下的HashMap 1.8版本不会导致死循环 比1.7jdk好
  */
 public class HashMapMultiThread {
     private static Map<String, String> map = new HashMap<>();
+//    private static Map<String, String> map = new ConcurrentHashMap<>();
 
     public static class AddThread implements Runnable{
         int start = 0;
