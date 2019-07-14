@@ -20,7 +20,7 @@ public class LogtTe {
         //局部变量没有修饰符
         int a = 111;
         long along = 10L;
-        logger.info( "j{aa}",along);
+        logger.info( "j{aa11}",along);
         logger.info("aaaaaaa"+ a);
     }
     @Test
