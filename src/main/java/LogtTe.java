@@ -37,10 +37,11 @@ public class LogtTe {
 
 //        logger.debug("i", A.HasmMapTest);
 //        logger
-        int a = 5;
-        for(int i = 0; i < 50; i ++){
-            System.out.println(new Random().nextInt(a));
-        }
+//        int a = 5;
+//        for(int i = 0; i < 50; i ++){
+//            System.out.println(new Random().nextInt(a));
+//        }
+        test();
     }
 
     @Resource
@@ -52,5 +53,23 @@ public class LogtTe {
     @Test
     public void z(){
         System.out.println(Thread.currentThread().getId());
+    }
+
+
+    @Test
+    public static void test(){
+        int a = 0;
+        int b = 0;
+        try {
+            int rs = a/b;
+        }catch (ArithmeticException e){
+            logger.info("打印信息:", e);
+            logger.error("打印信息[{}]", e);
+            int c =1;
+            logger.info("xinxi :[{}]", c);
+        }
+
+
+
     }
 }
