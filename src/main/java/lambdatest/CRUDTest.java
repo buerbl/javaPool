@@ -44,11 +44,9 @@ public class CRUDTest {
                 new Student("红发", 40, 180),
                 new Student("白胡子", 50, 185)).
                 collect(Collectors.toList());
-//        studentList.forEach(System.out::println);
         System.out.println(studentList);
         System.out.println(new Gson().toJson(studentList));
         List<Integer> integerList = studentList.stream().map(Student::getAge).collect(Collectors.toList());
-//        integerList.forEach(System.out::println);
         System.out.println(integerList);
     }
 
