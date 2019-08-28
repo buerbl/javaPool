@@ -1,11 +1,3 @@
-import org.junit.Test;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneOffset;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -27,17 +19,6 @@ public class a {
         List a;
 //        System.out.println(A.toString());
     }
-    @Test
-    public void test3(){
-        System.out.println(return1());
-//        System.out.println(return1());
-//        int i= 1;
-//        int f = 1;
-//        System.out.println(i++);
-//        System.out.println(++f);
-    }
-     static int i  = 1;
-    private int return1(){
 
     public Double getScore( Long oneDayGoldBean, Long useTime) {
         String value1 = String.valueOf(oneDayGoldBean/1.0);
@@ -54,7 +35,6 @@ public class a {
         long twelve = zero + 24 * 60 * 60 * 1000;
         return (twelve - current) / 1000;
     }
-        return i++;
-    }
 }
+
 
