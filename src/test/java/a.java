@@ -1,5 +1,10 @@
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,6 +39,21 @@ public class a {
      static int i  = 1;
     private int return1(){
 
+    public Double getScore( Long oneDayGoldBean, Long useTime) {
+        String value1 = String.valueOf(oneDayGoldBean/1.0);
+        long todayEndSS = getTodayEndSS(useTime);
+        String value2 = String.valueOf(todayEndSS);
+        String score =value1+value2;
+        return -Double.valueOf(score);
+    }
+
+    private long getTodayEndSS(long current){
+        //今天零点零分零秒的毫秒数
+        long zero = 0L;
+        //今天23点59分59秒的毫秒数
+        long twelve = zero + 24 * 60 * 60 * 1000;
+        return (twelve - current) / 1000;
+    }
         return i++;
     }
 }
