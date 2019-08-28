@@ -20,6 +20,7 @@ public class ThrowsCatchTest {
             logger.info("不能这样做哦");
             e.printStackTrace();
         }
+        System.out.println("我在这里");
 
 
     }

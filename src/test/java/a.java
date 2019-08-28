@@ -22,7 +22,19 @@ public class a {
         List a;
 //        System.out.println(A.toString());
     }
+    @Test
+    public void test3(){
+        System.out.println(return1());
+//        System.out.println(return1());
+//        int i= 1;
+//        int f = 1;
+//        System.out.println(i++);
+//        System.out.println(++f);
+    }
+     static int i  = 1;
+    private int return1(){
 
-
+        return i++;
+    }
 }
 
