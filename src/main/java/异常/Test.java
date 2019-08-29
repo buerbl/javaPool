@@ -2,10 +2,10 @@ package 异常;
 
 public class Test {
 
-    public static void main(String[] args) throws MyException, MyPlusException {
+    public static void main(String[] args) throws MyPlusException {
         Boolean a = true;
         if (a){
-            throw new MyException();
+//            throw new MyException();
 
         }else {
             throw new MyPlusException();
