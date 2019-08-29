@@ -116,4 +116,15 @@ public class JsonTest {
         System.out.println(a);
     }
 
+
+    @Test
+    public void test6(){
+        Long number = 602913107865767936L;
+//        602913107865767936
+        Gson gson = new Gson();
+        String a = gson.toJson(number);
+        System.out.println(a);
+
+    }
+
 }
