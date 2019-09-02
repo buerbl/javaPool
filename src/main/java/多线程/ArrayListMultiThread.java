@@ -46,15 +46,17 @@ public class ArrayListMultiThread {
 
     @Test
     public void test4(){
+        Integer a  = 0;
         long s = System.currentTimeMillis();
         int q = 10000000;
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
         ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 0L,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
-
-        AtomicInteger b = new AtomicInteger(0);
+        AtomicInteger b = new AtomicInteger();
         for ( int i =0; i < q; i++) {
-            singleThreadPool.execute(() -> b.getAndIncrement());
+            synchronized (al){
+                singleThreadPool.execute(() -> b.getAndIncrement());
+            }
         }
         singleThreadPool.shutdown();
         long e = System.currentTimeMillis();
@@ -73,6 +75,11 @@ public class ArrayListMultiThread {
         test4();
         long e = System.currentTimeMillis();
         System.out.println(e - s);
+    }
+
+    @Test
+    public void test8(){
+        System.out.println(this);
     }
 
 }
