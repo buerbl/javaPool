@@ -1,11 +1,11 @@
 package 多线程;
 
-import classtest.A;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author boolean
@@ -17,7 +17,7 @@ public class ArrayListMultiThread {
     public static class AddThread implements Runnable{
         @Override
         public void run() {
-            for (int i = 0; i < 1000000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 al.add(i);
             }
         }
@@ -34,38 +34,32 @@ public class ArrayListMultiThread {
     @Test
     public void test2(){
         long s = System.currentTimeMillis();
-        for (int i = 0; i < 1000000; i++) {
-            System.out.println(i);
+        int c = 0;
+        for (int i = 0; i < 10000000; i++) {
+            ++c;
 
         }
         long e = System.currentTimeMillis();
+        System.out.println("test2的i值为：" + c);
         System.out.println("time2："+(e - s ));
     }
 
     @Test
     public void test4(){
         long s = System.currentTimeMillis();
-        int q = 1000000;
+        int q = 10000000;
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
-        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 10L,
+        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 0L,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
-        for (int i = 0; i < q; i++) {
-            int finalI = i;
-            singleThreadPool.execute(() -> {
-                    System.out.println(finalI);
-            });
+        AtomicInteger b = new AtomicInteger(0);
+        for ( int i =0; i < q; i++) {
+            singleThreadPool.execute(() -> b.getAndIncrement());
         }
         singleThreadPool.shutdown();
-//        while (true){
-//            if (singleThreadPool.isTerminated()) {
-                long e = System.currentTimeMillis();
-                System.out.println("time4："+(e - s ));
-//            }
-//        }
-
-
-
+        long e = System.currentTimeMillis();
+        System.out.println("test4的i值为：" + b);
+        System.out.println("time4："+(e - s ));
     }
 
     @Test
