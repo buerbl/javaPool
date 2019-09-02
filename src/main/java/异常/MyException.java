@@ -10,10 +10,17 @@ public class MyException {
 
     private String test1(){
         try {
-            return "z";
+//            return "z";
+            throw new RuntimeException("ss");
         }finally {
-            return "m";
+            throw new RuntimeException("ss1");
+
         }
 //        return "v";
+    }
+
+    @Test
+    public void test2(){
+        throw new RuntimeException("sa");
     }
 }
