@@ -5,7 +5,9 @@ import org.junit.Test;
 public class MyException {
     @Test
     public void  test(){
-  test1();
+
+
+        test1();
     }
 
     private String test1(){
