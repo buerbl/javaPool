@@ -1,6 +1,5 @@
 package 多线程;
 
-import classtest.A;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.Test;
 
@@ -65,7 +64,6 @@ public class ArrayListMultiThread {
 
     @Test
     public void test4(){
-        Integer a  = 0;
         long s = System.currentTimeMillis();
         int q = 10000000;
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
@@ -73,21 +71,11 @@ public class ArrayListMultiThread {
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
         AtomicInteger b = new AtomicInteger();
         for ( int i =0; i < q; i++) {
-            synchronized (al){
+            synchronized (al) {
                 singleThreadPool.execute(() -> b.getAndIncrement());
             }
-        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 0L,
-                TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy()){
-//            @Override
-//            protected void afterExecute(Runnable r, Throwable t){
-//                System.out.println("执行完成tim1e：" + System.currentTimeMillis());
-//            }
-//
-//            @Override
-//            protected void terminated(){
-//                System.out.println("退出");
-//            }
-        };
+        }
+
 
         AtomicInteger a = new AtomicInteger(0);
         final int[] c = {0};
