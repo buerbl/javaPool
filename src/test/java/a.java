@@ -1,3 +1,6 @@
+import org.junit.Test;
+
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,8 +19,8 @@ public class a {
 
 
     public void test2() {
-        List a;
-//        System.out.println(A.toString());
+        List<Integer> list = new LinkedList<>();
+        //        System.out.println(A.toString());
     }
 
     public Double getScore( Long oneDayGoldBean, Long useTime) {
@@ -35,6 +38,14 @@ public class a {
         long twelve = zero + 24 * 60 * 60 * 1000;
         return (twelve - current) / 1000;
     }
+
+    @Test
+    public void tets(){
+        System.out.println(0.3 - 0.2 == 0.1);
+    }
+
+
+
 }
 
 

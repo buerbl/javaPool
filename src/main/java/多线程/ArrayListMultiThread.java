@@ -1,5 +1,6 @@
 package 多线程;
 
+import classtest.A;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class ArrayListMultiThread {
     public static class AddThread implements Runnable{
         @Override
         public void run() {
-            for (int i = 0; i < 1000000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 al.add(i);
             }
         }
@@ -45,6 +46,8 @@ public class ArrayListMultiThread {
     @Test
     public void test2(){
         long s = System.currentTimeMillis();
+        int c = 0;
+
         int a  = 0;
         for (int i = 0; i < 1000000; i++) {
             a ++;
@@ -56,15 +59,23 @@ public class ArrayListMultiThread {
 
         }
         long e = System.currentTimeMillis();
-        System.out.println("b:"+a);
-        System.out.println("time2："+(e - s )/1000);
+        System.out.println("test2的i值为：" + c);
+        System.out.println("time2："+(e - s ));
     }
 
     @Test
     public void test4(){
+        Integer a  = 0;
         long s = System.currentTimeMillis();
-        int q = 1000000;
+        int q = 10000000;
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
+        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 0L,
+                TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+        AtomicInteger b = new AtomicInteger();
+        for ( int i =0; i < q; i++) {
+            synchronized (al){
+                singleThreadPool.execute(() -> b.getAndIncrement());
+            }
         ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 0L,
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy()){
 //            @Override
@@ -91,18 +102,10 @@ public class ArrayListMultiThread {
                 e.printStackTrace();
             }
         }
-
         singleThreadPool.shutdown();
-//        while (true){
-//            if (singleThreadPool.isTerminated()) {
-                long e = System.currentTimeMillis();
-        System.out.println("a:"+c[0]);
-        System.out.println("time4："+(e - s )/1000);
-//            }
-//        }
-
-
-
+        long e = System.currentTimeMillis();
+        System.out.println("test4的i值为：" + b);
+        System.out.println("time4："+(e - s ));
     }
 
     @Test
@@ -116,6 +119,11 @@ public class ArrayListMultiThread {
         test4();
         long e = System.currentTimeMillis();
         System.out.println(e - s);
+    }
+
+    @Test
+    public void test8(){
+        System.out.println(this);
     }
 
 }
