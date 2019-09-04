@@ -20,6 +20,13 @@ public class IO {
 
     @Test
     public void test1(){
-//        File file = new File();
+        File file = new File("/q.txt");
+        System.out.println(file.exists());
+        if (!file.exists()){
+            file.mkdir();
+        }
+
+        System.out.println(file.getPath());
+        System.out.println(file.list());
     }
 }
