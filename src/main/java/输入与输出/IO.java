@@ -20,10 +20,11 @@ public class IO {
 
     @Test
     public void test1(){
+        // 磁盘根目录的
         File file = new File("/q.txt");
         System.out.println(file.exists());
         if (!file.exists()){
-            file.mkdir();
+            file.mkdirs();
         }
 
         System.out.println(file.getPath());
