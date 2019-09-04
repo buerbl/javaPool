@@ -8,9 +8,10 @@ import java.lang.reflect.Method;
  * @description int的包装器
  */
 public class IntegerTest {
-//    Integer
+     static Integer i = null;
 public static void main(String[] args){
-    System.out.println();
+
+    System.out.println(i.intValue());
     //todo siaksjda
 
 }
