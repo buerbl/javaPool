@@ -25,19 +25,37 @@ public class ArrayListMultiThread {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Thread t1 = new Thread(new AddThread());
-        Thread t2 = new Thread(new AddThread());
-        t1.start();t2.start();
-        t1.join();t2.join();
-        System.out.println(al.size());
+//        Thread t1 = new Thread(new AddThread());
+//        Thread t2 = new Thread(new AddThread());
+//        t1.start();t2.start();
+//        t1.join();t2.join();
+//        System.out.println(al.size());
+
+
+        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
+        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 10L,
+                TimeUnit.SECONDS, new LinkedBlockingQueue<>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy()){
+            @Override
+            protected void afterExecute(Runnable r, Throwable t){
+                System.out.println("执行完成time：" + System.currentTimeMillis());
+            }
+        };
+
     }
 
     @Test
     public void test2(){
         long s = System.currentTimeMillis();
         int c = 0;
-        for (int i = 0; i < 10000000; i++) {
-            ++c;
+
+        int a  = 0;
+        for (int i = 0; i < 1000000; i++) {
+            a ++;
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
         long e = System.currentTimeMillis();
@@ -47,7 +65,6 @@ public class ArrayListMultiThread {
 
     @Test
     public void test4(){
-        Integer a  = 0;
         long s = System.currentTimeMillis();
         int q = 10000000;
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
@@ -55,8 +72,23 @@ public class ArrayListMultiThread {
                 TimeUnit.SECONDS, new LinkedBlockingQueue<>(q), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
         AtomicInteger b = new AtomicInteger();
         for ( int i =0; i < q; i++) {
-            synchronized (al){
+            synchronized (al) {
                 singleThreadPool.execute(() -> b.getAndIncrement());
+            }
+        }
+
+
+        AtomicInteger a = new AtomicInteger(0);
+        final int[] c = {0};
+        for (int i =  0; i < q; i++) {
+//            singleThreadPool.execute(a::getAndIncrement);
+            singleThreadPool.execute(()->{
+                c[0]++;
+            });
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
         singleThreadPool.shutdown();
