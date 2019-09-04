@@ -17,4 +17,9 @@ public class IO {
         File file1 = new File("/");
         System.out.println(Arrays.toString(file1.list()));
     }
+
+    @Test
+    public void test1(){
+//        File file = new File();
+    }
 }
