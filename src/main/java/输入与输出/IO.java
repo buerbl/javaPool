@@ -26,6 +26,13 @@ public class IO {
         if (!file.exists()){
             file.mkdirs();
         }
+        // 当前目录
+        File file1 = new File("q1.txt");
+        System.out.println(file1.exists());
+        if (!file1.exists()){
+            file1.mkdirs();
+        }
+
 
         System.out.println(file.getPath());
         System.out.println(file.list());
