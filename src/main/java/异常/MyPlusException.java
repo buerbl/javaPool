@@ -1,4 +1,4 @@
 package 异常;
 
-public class MyPlusException extends Exception {
+public class MyPlusException extends RuntimeException {
 }

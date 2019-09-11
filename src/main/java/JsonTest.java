@@ -33,7 +33,7 @@ public class JsonTest {
         List<String> list = new ArrayList<>();
         list.add(0, "A");
         list.add(1, "HasmMapTest");
-        list.add(2, "c");
+        list.add(2, "C");
         jsonTest.setList(list);
         Integer[] array = new Integer[]{1,2,3,4,5,6};
         jsonTest.setArray(array);

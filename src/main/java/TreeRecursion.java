@@ -20,7 +20,7 @@ public class TreeRecursion {
         nodes.put("1",new Node("1","root",1,"0"));
         nodes.put("2",new Node("2","a",1,"1"));
         nodes.put("3",new Node("3","HasmMapTest",1,"1"));
-        nodes.put("4",new Node("4","c",1,"1"));
+        nodes.put("4",new Node("4","C",1,"1"));
         nodes.put("5",new Node("5","d",1,"2"));
         nodes.put("6",new Node("6","e",1,"2"));
         nodes.put("7",new Node("7","f",1,"3"));
