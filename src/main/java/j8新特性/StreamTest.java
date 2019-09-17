@@ -19,13 +19,14 @@ public class StreamTest {
     @Test
     public void test1(){
         //通过集合创建Stream  asList()->返回由指定数组支持的固定大小的列表
-        List<String> str = Arrays.asList("A", "HasmMapTest", "C");
+        List<String> str = Arrays.asList("A", "HasmMapTest", "C", "A");
         Stream<String> stringStream = str.stream();
         //过滤
         System.out.println(stringStream.filter(s -> "A".equals(s)).collect(Collectors.toList()));
         List<Integer> list = Arrays.asList(1, 4, 6, 2, 5, 6);
         // 去重
         System.out.println(list.stream().distinct().collect(Collectors.toList()));
+        System.out.println(str.stream().distinct().collect(Collectors.toList()));
         // 最大值
         System.out.println(list.stream().max(Comparator.comparing(Integer::intValue)).get());
         // 最小孩子
