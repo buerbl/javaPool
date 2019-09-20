@@ -32,4 +32,13 @@ public class StreamTest {
         // 最小孩子
         System.out.println(list.stream().min(Comparator.comparing(Integer::intValue)).get());
     }
+
+    @Test
+    public void test(){
+        List<Integer> integerList = Arrays.asList(1, 1, 2, 3, 4, 5);
+        integerList.stream().filter(i -> i > 3).forEach(System.out::println);
+
+
+
+    }
 }

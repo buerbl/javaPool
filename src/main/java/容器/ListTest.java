@@ -28,4 +28,9 @@ public class ListTest {
 
         aList.forEach(System.out::println);
     }
+
+    @Test
+    public void linkListTest(){
+        LinkedList<String> linkedList = new LinkedList<>();
+    }
 }
