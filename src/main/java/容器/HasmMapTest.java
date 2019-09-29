@@ -81,6 +81,15 @@ public class HasmMapTest {
     }
 
 
+    @Test
+    public void putHashMap(){
+        HashMap map = new HashMap();
+        map.put("tr", 1);
+        map.put("trt",3);
+        map.put("r",6);
+        System.out.println(map);
+    }
+
 
 
 

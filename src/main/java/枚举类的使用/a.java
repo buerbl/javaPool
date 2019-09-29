@@ -27,4 +27,11 @@ public class a {
         }
 
     }
+
+
+    @Test
+    public  void test2(){
+        System.out.println(StatusEnum.ONLINE.getCode());
+        System.out.println(StatusEnum.ONLINE.getMsg());
+    }
 }

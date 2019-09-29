@@ -1,10 +1,14 @@
 package j8新特性;
 
 import com.google.gson.Gson;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.junit.Test;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Auther: boolean
@@ -13,9 +17,17 @@ import java.util.Optional;
  */
 public class OptionalTest {
     @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
     class User{
         private String name;
+        private String chen;
+        private Integer wen;
+        private String guan;
+
     }
+
+
 
 
     public  String getNameByNew(User u ) {
@@ -42,12 +54,26 @@ public class OptionalTest {
             System.out.println("不为空");
             System.out.println(u.getName());
         }
+        Optional.ofNullable(u).orElse(null);
         String reNew =  getNameByNew(u);
         System.out.println("new:"+reNew);
         String reOld =  getNameByOld(u);
         System.out.println("old:"+reOld);
-
-
+        u.setName("chen");
+        System.out.println(reNew = getNameByNew(u));
+        System.out.println(reOld = getNameByOld(u));
     }
+
+    @Test
+    public void mapTest(){
+        Stream<User> userStream = Stream.of(new User("n1", "c1", 1, "g1"),
+                new User("n1", "c1", 1, "g2"),
+                new User("n2", "c2", 2, "g3"),
+                new User("n3", "c3", 3, "g4"));
+//        userStream.forEach(System.out::println);
+//        System.out.println(userStream.flatMap(user -> Stream.of(user.getChen(),user.getWen())).collect(Collectors.toList()));
+    }
+
+
 
 }

@@ -2,6 +2,7 @@ import classtest.Animal;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.Test;
@@ -120,11 +121,22 @@ public class JsonTest {
     @Test
     public void test6(){
         Long number = 602913107865767936L;
+        String A = "爱上";
+        CheckVO checkVO = new CheckVO();
+        checkVO.setCode(1);
+        checkVO.setMsg("订单");
 //        602913107865767936
         Gson gson = new Gson();
-        String a = gson.toJson(number);
+        String a = gson.toJson(checkVO);
         System.out.println(a);
+        System.out.println(gson.fromJson("{\"code\":1,\"msg\":\"订单\"}", CheckVO.class));
 
+    }
+
+    @Data
+    class CheckVO{
+        private Integer code;
+        private String msg;
     }
 
 }
