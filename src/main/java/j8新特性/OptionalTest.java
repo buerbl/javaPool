@@ -46,8 +46,6 @@ public class OptionalTest {
         System.out.println("new:"+reNew);
         String reOld =  getNameByOld(u);
         System.out.println("old:"+reOld);
-
-
     }
 
 }

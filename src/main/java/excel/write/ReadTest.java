@@ -3,6 +3,8 @@ package excel.write;
 import com.alibaba.excel.EasyExcel;
 import org.junit.Test;
 
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +18,11 @@ public class ReadTest {
     @Test
     public void simpleWrite() {
         // 写法1
-        String fileName = "E:\\gitwork\\" + System.currentTimeMillis() + ".xlsx";
+        FileSystemView fsv = FileSystemView.getFileSystemView();
+        File com=fsv.getHomeDirectory();    //这便是读取桌面路径的方法了
+        System.out.println(com.getPath());
+        String fileName = com.getPath() + "\\煮面" + ".xlsx";
+
         // 这里 需要指定写用哪个class去读，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
         // 如果这里想使用03 则 传入excelType参数即可
         EasyExcel.write(fileName, DemoData.class).sheet("模板").doWrite(data());
