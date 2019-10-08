@@ -7,7 +7,7 @@ import org.junit.Test;
  * Date: 2019/5/21 14:31
  * description:
  */
-public class Solution {
+public class 两数之和1 {
     //https://leetcode-cn.com/problems/two-sum/
     @Test
     public  void  twoSumTest(){
