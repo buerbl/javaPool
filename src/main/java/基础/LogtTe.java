@@ -1,10 +1,10 @@
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
+package 基础;
+
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
-import java.util.Random;
 
 /**
  * @Auther: boolean

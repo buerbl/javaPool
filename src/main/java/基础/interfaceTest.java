@@ -1,3 +1,5 @@
+package 基础;
+
 import org.junit.Test;
 
 import javax.annotation.Resource;
@@ -18,6 +20,7 @@ class Chilren implements interfaceTest{
     @Override
     public void a() {
         System.out.println(1111);
+
     }
 
     @Override

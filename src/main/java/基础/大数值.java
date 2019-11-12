@@ -1,6 +1,10 @@
+package 基础;
+
+import org.apache.poi.hpsf.Array;
 import org.junit.Test;
 
 import java.math.BigInteger;
+import java.util.*;
 
 /**
  * @Author buer
@@ -18,6 +22,18 @@ public class 大数值 {
         System.out.println("相加：" + c);
         BigInteger e = bigInteger1.multiply(bigInteger2);
         System.out.println("相乘：" + e);
+
+    }
+
+    @Test
+    public void tetsAdD() {
+         Map map = new HashMap();
+//         map.put(5,"s");
+//         map.put(1,"sa");
+//         map.put(2,"saa");
+//        map.forEach((k,v)->{
+//            System.out.println(k+"&"+v);
+//        });
 
     }
 }

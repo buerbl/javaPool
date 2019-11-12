@@ -1,5 +1,5 @@
-import classtest.Animal;
-import com.alibaba.fastjson.JSON;
+package 基础;
+
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import lombok.Data;

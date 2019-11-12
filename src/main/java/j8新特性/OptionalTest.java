@@ -27,9 +27,6 @@ public class OptionalTest {
 
     }
 
-
-
-
     public  String getNameByNew(User u ) {
         String s = Optional.ofNullable(u)
                 .map(user -> user.name)
@@ -74,6 +71,27 @@ public class OptionalTest {
 //        System.out.println(userStream.flatMap(user -> Stream.of(user.getChen(),user.getWen())).collect(Collectors.toList()));
     }
 
+    @Test
+    public void testifpresent(){
+        for (int i = 0; i < 10; i++) {
+            if (i == 0){
+                System.out.println(0);
+                break;
+            }
+            System.out.println(1);
 
+        }
+
+
+        for (int i = 0; i < 10; i++) {
+            if (i == 2){
+                System.out.println(2);
+                continue;
+            }
+            System.out.println(3);
+        }
+
+
+    }
 
 }

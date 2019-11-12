@@ -1,3 +1,5 @@
+package 基础;
+
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 

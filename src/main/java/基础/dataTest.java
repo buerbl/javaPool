@@ -1,3 +1,5 @@
+package 基础;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.Test;

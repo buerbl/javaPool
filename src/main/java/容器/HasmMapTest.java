@@ -87,9 +87,13 @@ public class HasmMapTest {
         map.put("tr", 1);
         map.put("trt",3);
         map.put("r",6);
-        System.out.println(map);
-    }
+//        map.forEach((K,V)-> System.out.println(K+"&"+V));
+//        map.forEach();
 
+    }
+    public static void main(String[] args){
+        System.out.println("Hello,Java");
+    }
 
 
 

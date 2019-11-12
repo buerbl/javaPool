@@ -1,3 +1,5 @@
+package 基础;
+
 import org.junit.Test;
 
 /**
