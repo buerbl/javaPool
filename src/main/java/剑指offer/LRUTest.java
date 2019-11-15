@@ -46,8 +46,6 @@ public class LRUTest<K,V> {
     public void forEach(BiConsumer<? super K, ? super V> action) {
        cacheMap.forEach(action);
     }
-
-
     public static void main(String[] args){
         LRUTest<String, String> stringStringLRUTest = new LRUTest<>(2);
         stringStringLRUTest.put("s1","s");

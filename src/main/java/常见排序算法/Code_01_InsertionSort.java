@@ -1,8 +1,12 @@
 package 常见排序算法;
 
+/**
+ * 插入排序
+ */
+
 import java.util.Arrays;
 
-//�������򣨴�С����
+
 public class Code_01_InsertionSort {
 
 	public static void insertionSort(int[] arr) {

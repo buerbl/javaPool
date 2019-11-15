@@ -1,4 +1,8 @@
 package 常见排序算法;
+/**
+ * 冒泡排序 1 2 3种方法
+ */
+
 
 import java.util.Arrays;
 
@@ -14,10 +18,9 @@ public class Code_00_BubbleSort {
 					swap(arr, i, i + 1);
 				}
 			}
-
-
 		}
 	}
+
 
 	public static void swap(int[] arr, int i, int j) {
 		//其实就是交换
@@ -27,6 +30,7 @@ public class Code_00_BubbleSort {
 		arr[i] = arr[i] ^ arr[j];
 
 	}
+
 
 	// for test
 	//产生有个绝对正确的结果

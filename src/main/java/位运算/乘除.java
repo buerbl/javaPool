@@ -51,4 +51,28 @@ public class 乘除 {
 
 
     }
+
+
+
+    @Test
+    public void  异或test(){
+        // 需要整形
+        int i=1, j=2;
+//        String i = "a", j = "b";
+        System.out.println("输入前："+"i:"+i+" "+"j:"+j);
+        i = i ^ j;  // 01 10 -> i=11
+        j = i^j;//11  10 -> j=01
+        i = i^j;//11 01 -> i = 10
+        System.out.println("输入后："+"i:"+i+" "+"j:"+j);
+    }
+
+    @Test
+    public  void testStrign(){
+        String a  = "a";
+        System.out.println(a.getBytes()[0]);
+        char b = 'a';
+
+    }
+
+
 }

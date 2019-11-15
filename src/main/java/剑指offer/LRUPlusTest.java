@@ -1,8 +1,7 @@
 package 剑指offer;
 
-import org.junit.Test;
-
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Description:
@@ -13,18 +12,18 @@ import java.util.LinkedList;
  * @Date: 2019/11/12 16:39
  */
 public class LRUPlusTest{
-    private LinkedList<Integer> list;
+    private List<Integer> list;
     private final int size;
     public LRUPlusTest(int size){
         this.size = size;
-        this.list = new LinkedList();
+        this.list = new ArrayList();
     }
 
     public void put(Integer target){
         if(target == null){
             return;
         }
-        if(list.size() == size){
+        if(list.size() > size){
             list.remove(size-1);
         }
         list.add(0,target);
@@ -45,13 +44,7 @@ public class LRUPlusTest{
     }
 
     public static void main(String[] args) {
-        LRUPlusTest lruPlusTest = new LRUPlusTest(2);
-        lruPlusTest.put(1);
-        lruPlusTest.put(2);
-        lruPlusTest.put(3);
-        lruPlusTest.put(4);
-        lruPlusTest.get(3);
-        lruPlusTest.list.forEach(System.out::println);
+            System.out.println("纯手打");
     }
 }
 

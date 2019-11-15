@@ -1,7 +1,9 @@
 package 常见排序算法;
-
 import java.util.Arrays;
 
+/**
+ * 选择排序
+ */
 public class Code_02_SelectionSort {
 
 	public static void selectionSort(int[] arr) {

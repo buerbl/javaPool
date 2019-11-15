@@ -2,6 +2,9 @@ package 常见排序算法;
 
 import java.util.Arrays;
 
+/**
+ * 快速排序
+ */
 public class Code_04_QuickSort {
 
 	public static void quickSort(int[] arr) {
@@ -11,30 +14,28 @@ public class Code_04_QuickSort {
 		quickSort(arr, 0, arr.length - 1);
 	}
 
-	public static void quickSort(int[] arr, int l, int r) {
-		if (l < r) {
-			swap(arr, l + (int) (Math.random() * (r - l + 1)), r); //随机快排（优化，最后一个数不定）
-			int[] p = partition(arr, l, r);
-			quickSort(arr, l, p[0] - 1);
-			quickSort(arr, p[1] + 1, r);
+	public static void quickSort(int[] arr, int left, int right) {
+		if (left < right) {
+			swap(arr, left + (int) (Math.random() * (right - left + 1)), right); //随机快排（优化，最后一个数不定）
+			int[] p = partition(arr, left, right);
+			quickSort(arr, left, p[0] - 1);
+			quickSort(arr, p[1] + 1, right);
 		}
 	}
 
-	public static int[] partition(int[] arr, int l, int r) {
-		int less = l - 1;
-		int more = r;	//比荷兰国旗问题少一个变量
-//		int moer1 = r+1;
-//		int num = arr[more]
-		while (l < more) {
-			if (arr[l] < arr[r]) {
-				swap(arr, ++less, l++);
-			} else if (arr[l] > arr[r]) {
-				swap(arr, --more, l);  //交换回最后一个数
+	public static int[] partition(int[] arr, int left, int right) {
+		int less = left - 1;
+		int more = right;	//比荷兰国旗问题少一个变量
+		while (left < more) {
+			if (arr[left] < arr[right]) {
+				swap(arr, ++less, left++);
+			} else if (arr[left] > arr[right]) {
+				swap(arr, --more, left);  //交换回最后一个数
 			} else {
-				l++;
+				left++;
 			}
 		}
-		swap(arr, more, r);	//把最后一个数交换到相等区域下一位
+		swap(arr, more, right);	//把最后一个数交换到相等区域下一位
 		return new int[] { less + 1, more };
 	}
 

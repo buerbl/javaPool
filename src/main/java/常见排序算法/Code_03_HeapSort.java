@@ -2,6 +2,9 @@ package 常见排序算法;
 
 import java.util.Arrays;
 
+/**
+ * 堆排序
+ */
 public class Code_03_HeapSort {
 
 	public static void heapSort(int[] arr) {
