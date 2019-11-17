@@ -107,10 +107,12 @@ public class Code_04_QuickSort {
 		int maxSize = 100;
 		int maxValue = 100;
 		boolean succeed = true;
+		QuickSort quickSort = new QuickSort();
 		for (int i = 0; i < testTime; i++) {
 			int[] arr1 = generateRandomArray(maxSize, maxValue);
 			int[] arr2 = copyArray(arr1);
-			quickSort(arr1);
+//			quickSort(arr1);
+			quickSort.sort(arr1);
 			comparator(arr2);
 			if (!isEqual(arr1, arr2)) {
 				succeed = false;
@@ -121,10 +123,6 @@ public class Code_04_QuickSort {
 		}
 		System.out.println(succeed ? "Nice!" : "Fucking fucked!");
 
-		int[] arr = generateRandomArray(maxSize, maxValue);
-		printArray(arr);
-		quickSort(arr);
-		printArray(arr);
 
 	}
 
