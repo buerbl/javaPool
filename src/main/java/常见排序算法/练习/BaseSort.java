@@ -64,8 +64,31 @@ public abstract  class BaseSort {
         System.out.println();
     }
 
+     public void testSort(BaseSort sort){
+         int testTime = 500000;
+        int maxSize = 100;
+        int maxValue = 100;
+        boolean succeed = true;
+        for (int i = 0; i < testTime; i++) {
+            int[] arr1 = generateRandomArray(maxSize, maxValue);
+            int[] arr2 = copyArray(arr1);
+            sort.sort(arr1);
+            comparator(arr2);
+            if (!isEqual(arr1, arr2)) {
+                succeed = false;
+                break;
+            }
+        }
+        System.out.println(succeed ? "Nice!" : "Fucking fucked!");
 
+        int[] arr = generateRandomArray(maxSize, maxValue);
+        printArray(arr);
+         sort.sort(arr);
+        printArray(arr);
 
+     }
+
+    protected abstract void sort(int[] arr);
 
 
 }

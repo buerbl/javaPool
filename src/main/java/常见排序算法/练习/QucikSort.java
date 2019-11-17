@@ -14,14 +14,14 @@ package 常见排序算法.练习;
  */
 public class QucikSort extends BaseSort {
 
-    public static void quickSort(int[] arr, int left, int right){
+    public  static void quickSort(int[] arr, int left, int right){
         if ( left >= right||arr == null || arr.length <= 1){
             return;
         }
         int pivot = arr[left + ((right - left) >> 1)];
         int i = left;
         int j = right;
-        while (i <= j  ){
+        while (i <= j ){
             while (arr[i] < pivot){
                 ++i ;
             }
@@ -43,26 +43,14 @@ public class QucikSort extends BaseSort {
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
-        int maxSize = 100;
-        int maxValue = 100;
-        boolean succeed = true;
-        for (int i = 0; i < testTime; i++) {
-            int[] arr1 = generateRandomArray(maxSize, maxValue);
-            int[] arr2 = copyArray(arr1);
-            quickSort(arr1, 0, arr1.length - 1);
-            comparator(arr2);
-            if (!isEqual(arr1, arr2)) {
-                succeed = false;
-                break;
-            }
-        }
-        System.out.println(succeed ? "Nice!" : "Fucking fucked!");
+        QucikSort sort = new QucikSort();
+       sort.testSort(sort);
 
-        int[] arr = generateRandomArray(maxSize, maxValue);
-        printArray(arr);
+    }
+
+    @Override
+    protected void sort(int[] arr) {
         quickSort(arr, 0, arr.length - 1);
-        printArray(arr);
     }
 }
 
