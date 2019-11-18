@@ -1,5 +1,7 @@
 package 常见排序算法.练习;
 
+import org.junit.Test;
+
 /**
  * @Description: 快速排序
  *
@@ -43,7 +45,7 @@ public class QucikSort extends BaseSort {
     }
 
     public static void main(String[] args) {
-        QucikSort sort = new QucikSort();
+        BaseSort sort = new QucikSort();
        sort.testSort(sort);
 
     }
@@ -51,6 +53,11 @@ public class QucikSort extends BaseSort {
     @Override
     protected void sort(int[] arr) {
         quickSort(arr, 0, arr.length - 1);
+    }
+
+    @Test
+    public void test(){
+        System.out.println((0 - 1) / 2); // 0
     }
 }
 
