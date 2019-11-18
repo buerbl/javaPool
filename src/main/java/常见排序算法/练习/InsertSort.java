@@ -20,6 +20,7 @@ public class InsertSort extends BaseSort {
     public void test( ){
         BaseSort sort  = new InsertSort();
         sort.testSort(sort);
+
     }
 }
 
