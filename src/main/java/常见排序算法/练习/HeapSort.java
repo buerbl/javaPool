@@ -44,7 +44,7 @@ public class HeapSort extends BaseSort {
         arr[i] = temp;//将temp值放到最终的位置
     }
 
-    private void swap(int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;

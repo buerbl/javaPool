@@ -13,6 +13,15 @@ public abstract  class BaseSort {
         Arrays.sort(arr);
     }
 
+    public static void swap(int[] arr, int i, int j) {
+        //其实就是交换
+
+        int tmp  = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+
+    }
+
     // for test
     public static int[] generateRandomArray(int maxSize, int maxValue) {
         int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
