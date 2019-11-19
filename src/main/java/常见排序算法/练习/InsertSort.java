@@ -3,7 +3,7 @@ package 常见排序算法.练习;
 import org.junit.Test;
 
 /**
- * @Description:  和打牌一样,后来的牌与前面相比，如果前面的牌大，就将大的牌向后移动
+     * @Description:  和打牌一样,后来的牌与前面相比，如果前面的牌大，就将大的牌向后移动
  * @Author: boolean
  * @Date: 2019/11/18 14:17
  */
