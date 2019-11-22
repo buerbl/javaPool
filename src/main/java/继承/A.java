@@ -1,18 +1,13 @@
 package 继承;
 
-import lombok.Data;
-
 /**
  * @Description:
  * @Author: boolean
- * @Date: 2019/11/20 16:49
+ * @Date: 2019/11/21 16:38
  */
-@Data
 public class A {
-    protected String name;
-
-    public void method(){
-
+    public A(){
+        System.out.println("我是A的构造函数");
     }
 }
 
