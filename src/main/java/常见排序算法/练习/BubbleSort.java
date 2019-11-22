@@ -13,8 +13,8 @@ import org.junit.Test;
  * @Date: 2019/11/18 11:50
  */
 public class BubbleSort extends BaseSort {
-    @Override
-    protected void sort(int[] arr) {
+//    @Override
+    protected void sort1(int[] arr) {
         for (int i = arr.length - 1; i >=  0; i --) {
             for (int j = 0; j < i ; j++) {
                 if (arr[j] > arr[j + 1]){
@@ -28,6 +28,21 @@ public class BubbleSort extends BaseSort {
     public void test(){
             BaseSort sort = new BubbleSort();
             sort.testSort(sort);
+    }
+
+    protected void sort(int[] arr) {
+        for (int i = arr.length - 1; i >  0; i --) {
+            boolean flag = false;
+            for (int j = 0; j < i ; j++) {
+                if (arr[j] > arr[j + 1]){
+                    swap(arr, j, j + 1);
+                    flag = true;
+                }
+            }
+            if (!flag){
+                return;
+            }
+        }
     }
 }
 
