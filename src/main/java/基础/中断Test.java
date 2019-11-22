@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @Description:  return break continue 测试
  * return 结束函数
- * break 结束一个循环体
+ * break 结束一个循环体 如果有嵌套循环的话，break在内循环的话 就中断内循环
  * continue 结束一个循环体里面的一次循环
  * @Author: boolean
  * @Date: 2019/11/22 14:16
