@@ -40,7 +40,7 @@ public class BubbleSort extends BaseSort {
                 }
             }
             if (!flag){
-                return;
+                break;
             }
         }
     }
