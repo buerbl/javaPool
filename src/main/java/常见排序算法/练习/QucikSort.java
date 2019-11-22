@@ -30,13 +30,15 @@ public class QucikSort extends BaseSort {
             while (arr[j] > pivot){
                -- j ;
             }
+
+            //与基准值相等的数可以到任何一边
             if (i < j) {
                 int t = arr[i];
                 arr[i] = arr[j];
                 arr[j] = t;
                 ++i;
                 --j;
-            } else if (i == j) {
+            } else if (i == j) { //跳出循环后i>j
                 ++i;
             }
         }
