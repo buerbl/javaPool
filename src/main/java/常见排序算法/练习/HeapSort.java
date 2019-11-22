@@ -1,8 +1,9 @@
 package 常见排序算法.练习;
 
 /**
- * @Description:
- * 1. 从右到左，从下到上创建大顶堆（父节点大于后者等于子节点的值）
+ * @Description:  https://www.cnblogs.com/chengxiao/p/6129630.html
+ *
+ * 1. 从右到左，从下到上创建大顶堆（每个父节点大于等于子节点的值）
  * 2.将堆顶元素放到数组最后，调整大顶堆
  * @Author: boolean
  * @Date: 2019/11/18 9:12
@@ -18,7 +19,7 @@ public class HeapSort extends BaseSort {
         //2.调整堆结构+交换堆顶元素与末尾元素
         for(int j=arr.length-1;j>0;j--){
             swap(arr,0,j);//将堆顶元素与末尾元素进行交换
-            adjustHeap(arr,0,j);//重新对堆进行调整
+            adjustHeap(arr,0,j);//重新对堆进行调整（每次都从顶点调整）
         }
     }
 
