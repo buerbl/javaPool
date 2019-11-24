@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class 数组 {
     @Test
     public  void test(){
-
+        System.out.println();
 
     }
 }
