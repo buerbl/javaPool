@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * description: 多线程下的ArrayList
  */
 public class ArrayListMultiThread {
-    static ArrayList<Integer> al = new ArrayList<>(10);
+    static volatile ArrayList<Integer> al = new ArrayList<>(10);
     public static class AddThread implements Runnable{
         @Override
         public void run() {
@@ -25,21 +25,21 @@ public class ArrayListMultiThread {
     }
 
     public static void main(String[] args) throws InterruptedException {
-//        Thread t1 = new Thread(new AddThread());
-//        Thread t2 = new Thread(new AddThread());
-//        t1.start();t2.start();
-//        t1.join();t2.join();
-//        System.out.println(al.size());
+        Thread t1 = new Thread(new AddThread());
+        Thread t2 = new Thread(new AddThread());
+        t1.start();t2.start();
+        t1.join();t2.join();
+        System.out.println(al.size());
 
 
-        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
-        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 10L,
-                TimeUnit.SECONDS, new LinkedBlockingQueue<>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy()){
-            @Override
-            protected void afterExecute(Runnable r, Throwable t){
-                System.out.println("执行完成time：" + System.currentTimeMillis());
-            }
-        };
+//        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("LotteryService-pool-%d").build();
+//        ExecutorService singleThreadPool = new ThreadPoolExecutor(2, 2, 10L,
+//                TimeUnit.SECONDS, new LinkedBlockingQueue<>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy()){
+//            @Override
+//            protected void afterExecute(Runnable r, Throwable t){
+//                System.out.println("执行完成time：" + System.currentTimeMillis());
+//            }
+//        };
 
     }
 

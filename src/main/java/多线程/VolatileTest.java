@@ -1,43 +1,29 @@
 package 多线程;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-import java.util.Date;
 
 /**
  * @Description:
  * @Author: boolean volatile关键字的测试
  * @Date: 2019/11/24 18:02
  */
-public class VolatileTest {
-    private    static   boolean flag= false;
+public class VolatileTest implements Runnable{
+    private static VolatileTest volatileTest = new VolatileTest();
+    private  static volatile int i= 0;
     public static void main(String[] args) throws InterruptedException {
-        Thread thread = new Thread(new Stop());
-        thread.start();
-        Thread thread1 = new Thread(new DoTest());
-        thread1.start();
-    }
-    public static class DoTest implements Runnable{
-        @Override
-        public void run() {
-            while(flag){
-                System.out.println("dott:"+new Date());
-                flag=false;
-            }
+        for (int j = 0; j < 20; j++) {
+            Thread a = new Thread(new VolatileTest());
+            Thread b = new Thread(new VolatileTest());
+            a.start();b.start();
+            a.join();b.join();
+            System.out.print(i+"&&");
         }
+
     }
-    public  static  class Stop implements  Runnable{
-        @Override
-        public void run() {
-            flag = true;
-            System.out.println("Stop:"+new Date());
-            try {
-                Thread.sleep(3000);
-                System.out.println("===");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+    @Override
+    public void run() {
+        for (int j = 0; j < 1000; j++) {
+            i++;
         }
     }
 }
