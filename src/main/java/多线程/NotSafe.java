@@ -12,14 +12,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Date: 2019/11/13 15:05
  */
 public class NotSafe {
+
     private AtomicInteger a = new AtomicInteger(0);
-    List list = new ArrayList();
+    List  list = new ArrayList();
     @Test
     public void test() throws InterruptedException {
         for (int i = 0; i < 100; i++) {
             Thread thread = new Thread(new Rrunnable());
             thread.start();
             thread.join();
+
         }
         System.out.println(a);
     }
