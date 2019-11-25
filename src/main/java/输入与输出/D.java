@@ -9,7 +9,7 @@ import 继承.A;
  */
 public class D   {
     public void method() {
-        A a = new A();
+        A a = new A(1);
 
 
 

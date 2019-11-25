@@ -7,6 +7,11 @@ package 继承;
  */
 public class A {
     public A(){
+        this(1);
+        System.out.println("我是A的构造函数");
+    }
+
+    public A(int i){
         System.out.println("我是A的构造函数");
     }
 }

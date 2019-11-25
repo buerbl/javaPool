@@ -10,6 +10,7 @@ import org.junit.Test;
  */
 public class B extends A {
     public B(){
+        super(1);
         System.out.println("我是B的构造函数");
     }
 
