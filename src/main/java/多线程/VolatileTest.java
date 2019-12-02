@@ -22,9 +22,12 @@ public class VolatileTest implements Runnable{
 
     @Override
     public void run() {
-        for (int j = 0; j < 1000; j++) {
-            i++;
-        }
+//        synchronized (volatileTest){
+            for (int j = 0; j < 1000; j++) {
+                i++;
+            }
+//        }
+
     }
 }
 
