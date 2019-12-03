@@ -1,6 +1,11 @@
 package 回调;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import 回调.Callback;
+import 回调.Student;
 
+@NoArgsConstructor
 public class Teacher implements Callback {
 
     private Student student;
@@ -9,7 +14,7 @@ public class Teacher implements Callback {
         this.student = student;
     }
 
-    public void askQuestion() {
+    protected void askQuestion() {
         student.resolveQuestion(this);
     }
 

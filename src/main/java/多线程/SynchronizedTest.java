@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SynchronizedTest {
     static int n = 100;
     final static CountDownLatch start = new CountDownLatch(n);
-    private static  int i = 0;
+    private static  Integer i = 0;
     public static void main(String[] args) throws InterruptedException {
         long str = System.currentTimeMillis();
         for (int j = 0; j < n; j++) {
