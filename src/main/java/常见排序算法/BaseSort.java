@@ -1,4 +1,4 @@
-package 常见排序算法.练习;
+package 常见排序算法;
 
 import java.util.Arrays;
 

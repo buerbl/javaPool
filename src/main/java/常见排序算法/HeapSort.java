@@ -1,4 +1,4 @@
-package 常见排序算法.练习;
+package 常见排序算法;
 
 /**
  * @Description:  https://www.cnblogs.com/chengxiao/p/6129630.html
