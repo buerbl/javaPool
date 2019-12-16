@@ -1,6 +1,7 @@
 package 基础;
 
 import lombok.Data;
+import org.junit.Test;
 
 /**
  * @Description:
@@ -10,11 +11,18 @@ import lombok.Data;
 @Data
 public final class FinalTest {
     private String name;
-    public static void main(String[] args) {
+    @Test
+    public  void main(String[] args) {
         FinalTest finalTest = new FinalTest();
         System.out.println(System.identityHashCode(finalTest));
         finalTest = new FinalTest();
         System.out.println(System.identityHashCode(finalTest));
+
+    }
+
+    @Test
+    public void test(){
+        final String a  = new String();
 
     }
 }

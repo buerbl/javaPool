@@ -17,4 +17,7 @@ public class Animalbutong {
         Animal animal = new Animal();
         System.out.println(animal.test);
     }
+
+
+
 }
