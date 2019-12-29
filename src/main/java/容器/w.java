@@ -13,18 +13,12 @@ import java.util.Random;
  */
 public class w {
 
-    @Test
-    public  void test(){
-        int a = 10;
-        o(a);
-        System.out.println(a);
-        String name = null;
-        StringUtils.isNotBlank(name);
-    }
-
-    private void o(int a) {
-        System.out.println(a);
-        System.out.println(1);
+    public static void main(String[] args) {
+        int j = 1;
+        int i = 0;
+        j = i++;
+        System.out.println(j);
+        System.out.println(i);
     }
 
 

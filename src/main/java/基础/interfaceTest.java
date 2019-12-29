@@ -46,6 +46,10 @@ class Chilren implements interfaceTest{
     void aaa(){
 
     }
+
+    public Chilren(){
+        super();
+    }
 }
 
 

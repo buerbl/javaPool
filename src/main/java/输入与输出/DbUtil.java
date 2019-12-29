@@ -25,6 +25,7 @@ public class DbUtil {
 //        PreparedStatement ptmt = conn.prepareStatement(sql); //预编译SQL，减少sql执行
 //
 //        //传参
+
 //        ptmt.setString(1, "\uD83D\uDE43");
 //        System.out.println(ptmt.toString());//此处打印了对象和 带入参数后的sql语句
 //

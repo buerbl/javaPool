@@ -27,7 +27,6 @@ public class Classtest {
         double b =  1.1;
         b = a;
         //返回对象 Double.valueOf()
-
     }
 
 

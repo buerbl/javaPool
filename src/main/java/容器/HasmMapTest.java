@@ -76,7 +76,6 @@ public class HasmMapTest {
             times = test(true1, false1);
         }
         System.out.println("true次数："+times);
-//        System.out.println(false1);
 
     }
 
@@ -87,7 +86,7 @@ public class HasmMapTest {
         map.put("tr", 1);
         map.put("trt",3);
         map.put("r",6);
-//        map.forEach((K,V)-> System.out.println(K+"&"+V));
+        map.forEach((K,V)-> System.out.println(K+"&"+V));
 //        map.forEach();
 
     }
