@@ -6,4 +6,6 @@ package 抽象类;
  * description ： 多多
  */
 public class a {
+    private String a;
+    public String aa;
 }

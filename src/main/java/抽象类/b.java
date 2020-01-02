@@ -6,4 +6,5 @@ package 抽象类;
  * description :
  */
 public class b {
+
 }
