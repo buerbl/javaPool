@@ -22,6 +22,7 @@ public class ForeachTest {
         for (int i = 0; i < 10; i++) {
             list.add(i);
         }
+        list.forEach(System.out::println);
         System.out.println(Arrays.toString(list.toArray()));
     }
 
