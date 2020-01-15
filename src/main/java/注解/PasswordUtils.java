@@ -8,7 +8,7 @@ import org.junit.Test;
  * @description
  */
 public class PasswordUtils {
-    @UseCase(id = 47, description = "ss")
+    @UseCase( description = "ss")
     public boolean validatePassword(String password){
         return (password.matches("\\w*\\dw*"));
 
