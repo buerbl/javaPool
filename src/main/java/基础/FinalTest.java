@@ -22,8 +22,7 @@ public final class FinalTest {
 
     @Test
     public void test(){
-        final String a  = new String();
-
+        
     }
 }
 

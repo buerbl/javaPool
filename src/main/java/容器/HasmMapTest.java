@@ -90,11 +90,21 @@ public class HasmMapTest {
 //        map.forEach();
 
     }
-    public static void main(String[] args){
-        System.out.println("Hello,Java");
+
+    /**
+     * 测试 for 循环
+     */
+    @Test
+    public void test(){
+        HashMap<String, String> hashMap = new HashMap();
+        hashMap.put("s","dd");
+        hashMap.put("d", "sa");
+        hashMap.entrySet();
+        for (Map.Entry map : hashMap.entrySet()){
+
+        }
+//        hashMap.forEach((K,V)-> System.out.println(K+"&"+V));
     }
-
-
 
 
 }

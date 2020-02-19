@@ -1,13 +1,13 @@
 package j8新特性;
 
-import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -15,6 +15,7 @@ import java.util.stream.Stream;
  * @Date: 2019/4/14 23:38
  * @Description: 消灭if-else
  */
+@Slf4j
 public class OptionalTest {
     @Data
     @NoArgsConstructor
@@ -94,4 +95,49 @@ public class OptionalTest {
 
     }
 
+    /**
+     * 什么是空对象
+     */
+    @Test
+    public void test1(){
+        User user = new User();
+        if (Objects.isNull(user)){
+            log.info("{}是null","user");
+        }else {
+            log.info("该对象不是null，改值为{}",user.toString());
+
+        }
+    }
+
+    /**
+     * 什么是null
+     */
+    @Test
+    public void test2(){
+        User user = null;
+        if (Objects.isNull(user)){
+            log.info("该对象是null");
+        }else {
+            log.info("该对象不是null，改值为{}",user.toString());
+        }
+    }
+
+    /**
+     * 翻会一个null
+     * @return
+     */
+    private User getnull(){
+        User user = null;
+        return user;
+    }
+
+    /**
+     * optional 二义性
+     */
+    @Test
+    public void test3(){
+        User getnull = getnull();
+        Optional<User> getnull1 = Optional.ofNullable(getnull);
+        log.info(getnull1.get().toString());
+    }
 }
