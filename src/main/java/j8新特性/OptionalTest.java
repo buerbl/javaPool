@@ -30,8 +30,11 @@ public class OptionalTest {
 
     public  String getNameByNew(User u ) {
         String s = Optional.ofNullable(u)
-                .map(user -> user.name)
+                .map(User::getName)
                 .orElse("Unknown");
+//        String s = Optional.ofNullable(u)
+//                .map(user -> user.name)
+//                .orElse("Unknown");
         return s;
     }
 
