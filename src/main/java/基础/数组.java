@@ -3,7 +3,6 @@ package 基础;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,14 +11,14 @@ import java.util.List;
  * @description
  */
 public class 数组 {
-    @Test
-    public  void test(){
-        System.out.println();
 
+    @Test
+    public void test() {
+        System.out.println();
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         List<String> list = new ArrayList<>();
         list.add("沉默王二");
         list.add("沉默王三");
@@ -30,11 +29,12 @@ public class 数组 {
                 list.remove(str);
             }
         }
-
         System.out.println(list);
+    }
 
-
-
-
+    @Test
+    public void test2() {
+        int[] a = {1, 2};
+        Integer[] aa = {2, 3};
     }
 }

@@ -122,7 +122,15 @@ public class StringTest {
     public void splitTest(){
         String naee = "ass, sas,";
         String[] a = naee.split(",");
-
     }
 
+
+    // 测试截取字符
+    @Test
+    public void  testSubstring(){
+        String nanem = "dsdsddasd";
+        System.out.println(nanem.substring(0,2));
+        System.out.println(nanem.contains("sa"));
+
+    }
 }
