@@ -38,7 +38,7 @@ public class StreamTest {
     @Test
     public void test(){
         List<Integer> integerList = Arrays.asList(1, 1, 2, 3, 4, 5);
-        integerList.stream().filter(i -> i > 3).forEach(System.out::println);
+        integerList.stream().filter(i -> i > 3 || i< 2).forEach(System.out::println);
     }
 
 

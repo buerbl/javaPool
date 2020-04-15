@@ -28,4 +28,14 @@ public   class IntTest {
 
 
     }
+
+    public int  tets(){
+        int i = 0;
+        return i++;
+    }
+
+    @Test
+    public void test3(){
+        System.out.println(tets());
+    }
 }
