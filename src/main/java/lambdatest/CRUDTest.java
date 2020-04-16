@@ -3,6 +3,7 @@ package lambdatest;
 import com.google.gson.Gson;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -48,6 +49,17 @@ public class CRUDTest {
         System.out.println(new Gson().toJson(studentList));
         List<Integer> integerList = studentList.stream().map(Student::getAge).collect(Collectors.toList());
         System.out.println(integerList);
+    }
+
+
+    @Test
+    public void test1(){
+        Integer[] data  = {5,34,67,2,6};
+        Arrays.sort(data,(var1, var2)->{
+            if (var1>var2) return 1;
+            else return -1;
+        });
+        System.out.println(Arrays.toString(data));
     }
 
 

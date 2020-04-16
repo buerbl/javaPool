@@ -20,9 +20,13 @@ public final class FinalTest {
 
     }
 
+    // 参数不可以改变
     @Test
     public void test(){
-        
+//        change(parm);
+    }
+    private void change(final String s){
+//        s="d";
     }
 }
 
