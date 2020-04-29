@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Objects;
 
 /**
  * @Author: boolean
@@ -22,11 +23,12 @@ public class StringTest {
     }
 
     @Test
-    public void formatTest1(){
+    public void formatTest1() {
         int[] arrys = new int[]{1, 2};
-        String couponInfo = String.format("满%s元减%s元",arrys[0],arrys[1]);
+        String couponInfo = String.format("满%s元减%s元", arrys[0], arrys[1]);
         System.out.println(couponInfo);
     }
+
     /**
      * @Author buer
      * @create 2019/4/27 23:53
@@ -47,10 +49,10 @@ public class StringTest {
 
 
     @Test
-    public void formatTest(){
+    public void formatTest() {
         String userId = "1";
-        String amount= "1";
-        String scene= "1";
+        String amount = "1";
+        String scene = "1";
         System.out.println(getClass());
         String tip = String.format("%s->takeRedpacket:userId=%s,amount=%s,scene=%s",
                 this.getClass().getName(),
@@ -62,16 +64,16 @@ public class StringTest {
 
 
     @Test
-    public void equalTest(){
-        String a  = new String("a");
-        String b =a;
-        System.out.println("HasmMapTest==a:" + (b==a));
-        System.out.println("HasmMapTest.equals(a): " +b.equals(a) );
+    public void equalTest() {
+        String a = new String("a");
+        String b = a;
+        System.out.println("HasmMapTest==a:" + (b == a));
+        System.out.println("HasmMapTest.equals(a): " + b.equals(a));
     }
 
     @Test
-    public void test2(){
-        String name= "sasasaQZX1sdasdad";
+    public void test2() {
+        String name = "sasasaQZX1sdasdad";
 //        if (name.contains("QZX") && name.split("QZX").length == 2 && NumberUtils.isDigits(name.split("QZX")[1])){
 //            System.out.println(name);
 //        }
@@ -81,7 +83,7 @@ public class StringTest {
     }
 
     @Test  //split
-    public void test(){
+    public void test() {
         String terms = "1dsds,2dsd,3sdsdsdsd";
         //以 ， 号分割字符串
         String[] termArray = terms.split(",");
@@ -92,17 +94,17 @@ public class StringTest {
     }
 
     @Test
-    public void charCompare(){
+    public void charCompare() {
 //        String
         char a = 'a';
         char b = 'r';
         System.out.println();
-        System.out.println(a>b);
-        System.out.println(a<b);
+        System.out.println(a > b);
+        System.out.println(a < b);
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         String name = null;
         System.out.println(name.length());
 //        HashMap
@@ -110,16 +112,16 @@ public class StringTest {
 
     //trim()方法使用 可删除首尾空格 但是没看出
     @Test
-    public void trimTest(){
+    public void trimTest() {
         String name = " che n ";
-        System.out.println("开始的name:"+name);
+        System.out.println("开始的name:" + name);
 
-        System.out.println( name.trim());
-        System.out.println("改变后的name:"+name);
+        System.out.println(name.trim());
+        System.out.println("改变后的name:" + name);
     }
 
     @Test
-    public void splitTest(){
+    public void splitTest() {
         String naee = "ass, sas,";
         String[] a = naee.split(",");
     }
@@ -127,10 +129,17 @@ public class StringTest {
 
     // 测试截取字符
     @Test
-    public void  testSubstring(){
+    public void testSubstring() {
         String nanem = "dsdsddasd";
-        System.out.println(nanem.substring(0,2));
+        System.out.println(nanem.substring(0, 2));
         System.out.println(nanem.contains("sa"));
 
+    }
+
+    // 字符串判断空值
+    @Test
+    public void testNull() {
+        String name = "";
+        System.out.println(Objects.isNull(name));
     }
 }
