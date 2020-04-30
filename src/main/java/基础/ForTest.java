@@ -27,6 +27,21 @@ public class ForTest {
             System.out.println(i);
         }
     }
+    @Test
+    public void testm(){
+        int n = 20;
+        for (int i = 0; i < n; i++){
+            for (int j = n; j >=0 ; j--){
+                if (i < j){
+                    System.out.print(" ");
+                }else {
+                    System.out.print("-");
+                }
+            }
+            System.out.println();
+        }
+//        System.out.println(111);
+    }
 
 
 }
