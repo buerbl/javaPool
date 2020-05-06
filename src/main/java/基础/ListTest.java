@@ -3,9 +3,7 @@ package 基础;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author buer
@@ -36,17 +34,27 @@ String a = "1";
     @Test
     public void test1(){
         List<String> list = new LinkedList<>();
-        list.add(0, "{\"name\":\"3\"}");
-//        list.set(1, "1");
+//        list.add(0, "{\"name\":\"3\"}");
+        list.add(0, "1");
 //        list.set(2, "1");
 //        list.set(3, "1");
 //        list.set(4, "1");
-        System.out.println(list.get(0));
-        System.out.println(list.get(0).getClass());
-        System.out.println();
-        System.out.println(JSONObject.parseObject(list.get(0)).getString("name"));
+//        System.out.println(list.get(0));
+//        System.out.println(list.get(0).getClass());
+        System.out.println(JSONObject.toJSON(list));
+//        System.out.println(JSONObject.parseObject(list.get(0)).getString("name"));
 
     }
+
+    @Test
+    public void test3(){
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(6,1);
+//        list.add(0, "{\"name\":\"3\"}");
+        System.out.println(JSONObject.toJSON(map));
+
+    }
+
 
 
 
