@@ -1,11 +1,13 @@
 package lambdatest;
 
 import com.google.gson.Gson;
+import org.apache.commons.collections.Factory;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -60,6 +62,19 @@ public class CRUDTest {
             else return -1;
         });
         System.out.println(Arrays.toString(data));
+    }
+
+    int i;
+    public static boolean m1(int item){
+        return item > 3;
+    }
+    @Test
+    public void debugTest(){
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+        list.stream().
+                filter(CRUDTest::m1).forEach(System.out::println);
+
+//        System.out.println(i);
     }
 
 
