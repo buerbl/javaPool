@@ -142,4 +142,14 @@ public class StringTest {
         String name = "";
         System.out.println(Objects.isNull(name));
     }
+
+    @Test
+    public void testTwoString(){
+        String a = "a";
+        String b = "a";
+        System.out.println(a==b);
+        String c = "b";
+        String d = new String("b");
+        System.out.println(c==d);
+    }
 }

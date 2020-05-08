@@ -55,7 +55,11 @@ String a = "1";
 
     }
 
-
+    @Test
+    public void test4(){
+       int a=5,b=2,c=4,d=6;
+        System.out.println(a--*2+c*--d);
+    }
 
 
 }
