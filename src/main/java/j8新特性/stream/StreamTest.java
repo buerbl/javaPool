@@ -1,13 +1,15 @@
 package j8新特性.stream;
 
 import com.google.gson.Gson;
-import org.checkerframework.checker.units.qual.s;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -17,6 +19,7 @@ import java.util.stream.Stream;
  * @Date: 2019/5/17 9:34
  * @description: Stream新特实践 实践 实践
  */
+@Slf4j
 public class StreamTest {
     @Test
     public void test1(){
@@ -54,7 +57,7 @@ public class StreamTest {
 
     @Test
     public void test3(){
-        List list = Arrays.asList(1, 2, 3, 4, 5);
+        List list = Arrays.asList(1, 2, 3, 4, 5,2,8, 7);
         long count = list.stream().count();
         System.out.println(count);
     }
@@ -115,4 +118,44 @@ public class StreamTest {
         });
         System.out.println(Arrays.toString(arr));
     }
+
+    @Test
+    public void testMap(){
+        List<O1> o1List = Arrays.asList(new O1("CHEN1", "深圳1",1),
+                new O1("CHEN2", "深圳2",1),
+                new O1("CHNE3", "深圳3",1),
+                new O1("CHEN", "深圳4",1));
+        List<U> uList = o1List.stream().map(o -> {
+            U u1 = new U();
+            u1.setAdress(o.getAdress());
+            u1.setName(o.getName());
+            return u1;
+        }).collect(Collectors.toList());
+        log.info(new Gson().toJson(uList));
+
+    }
+
+
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    class U{
+        private String name;
+        private String adress;
+        private String a;
+        private String b;
+
+    }
+
+    @Data
+    @AllArgsConstructor
+    class O1{
+        private String name;
+        private String adress;
+        private Integer sex;
+
+    }
+
+
 }
