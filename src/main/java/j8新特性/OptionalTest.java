@@ -143,4 +143,21 @@ public class OptionalTest {
         Optional<User> getnull1 = Optional.ofNullable(getnull);
         log.info(getnull1.get().toString());
     }
+
+    /**
+     * 测试map方法
+     */
+    @Test
+    public void testMap(){
+        O1 o1 = new O1("CHEN", "深圳");
+        O1 o11 = Optional.ofNullable(o1).orElse(null);
+        System.out.println(o11);
+    }
+
+    @Data
+    @AllArgsConstructor
+    class O1{
+        private String name;
+        private String adress;
+    }
 }
