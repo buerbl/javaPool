@@ -150,8 +150,8 @@ public class OptionalTest {
     @Test
     public void testMap(){
         O1 o1 = new O1("CHEN", "深圳");
-        O1 o11 = Optional.ofNullable(o1).orElse(null);
-        System.out.println(o11);
+        String s = Optional.ofNullable(o1).map(o11 -> o11.getAdress()).orElse(null);
+        System.out.println(s);
     }
 
     @Data
