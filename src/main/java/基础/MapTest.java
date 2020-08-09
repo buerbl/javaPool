@@ -3,6 +3,7 @@ package 基础;
 import com.google.common.collect.Maps;
 import org.junit.Test;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,6 +50,21 @@ public class MapTest {
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
+
+    }
+
+
+    @Test
+    public void testValues(){
+        Map<String, String> map = new HashMap();
+        map.put("c","h");
+        map.put("e", "n");
+        map.put("w", "e");
+        Collection<String> values = map.values();
+        values = null;
+        values.forEach(s-> System.out.println(s));
+
+
 
     }
 }

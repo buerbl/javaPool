@@ -43,6 +43,14 @@ public class ForTest {
 //        System.out.println(111);
     }
 
+    @Test
+    public void testDebugFor(){
+        int times = 120;
+        for (int i = 0; i < times; i ++){
+            System.out.println(i);
+        }
+    }
+
 
 }
 

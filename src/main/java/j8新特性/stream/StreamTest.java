@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -132,6 +133,19 @@ public class StreamTest {
             return u1;
         }).collect(Collectors.toList());
         log.info(new Gson().toJson(uList));
+
+    }
+
+    @Test
+    public void testSort(){
+        List<Student> list = new ArrayList<Student>();
+        list.add(new Student(1, "Mahesh", 12));
+        list.add(new Student(2, "Suresh", 15));
+        list.add(new Student(3, "Nilesh", 10));
+
+        System.out.println("---Natural Sorting by Name---");
+        List<Student> slist = list.stream().sorted(Comparator.comparing(Student::getAge).reversed()).collect(Collectors.toList());
+        slist.forEach(e -> System.out.println("Id:"+ e.getId()+", Name: "+e.getName()+", Age:"+e.getAge()));
 
     }
 

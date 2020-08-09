@@ -23,6 +23,19 @@ public class ThreadLocalTest {
         System.out.println(threadLocal.get());
     }
 
+
+    @Test
+    public void testAsyn(){
+        new Thread(()-> {
+            try {
+                Thread.sleep(1000*5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        System.out.println("完成");
+    }
+
 }
 
 
