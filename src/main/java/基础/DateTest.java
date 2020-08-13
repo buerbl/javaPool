@@ -55,7 +55,7 @@ public class DateTest {
 
     @Test
     public void testDateException(){
-        System.out.println(inTimeByHMS("21:2100000io:11", "11:11:11", "23:11:11"));
+        System.out.println(inTimeByHMS("21:33:11", "11:11:11", "23:11:11"));
     }
 
     public static Boolean inTimeByHMS (String targetTime, String startTime, String endTime){
