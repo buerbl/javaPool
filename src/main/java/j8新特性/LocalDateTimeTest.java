@@ -22,10 +22,10 @@ public class LocalDateTimeTest {
     public void test(){
         LocalDateTime now = LocalDateTime.now();
         logger.debug("sssss");
-        logger.info("当前时间：【{}】", now);
+        logger.info("当前时间：[{}]", now);
     }
 
-    //date转localdatetime 信你个龟
+    //date转localdatetime 信你个
     @Test
     public void transformTest(){
 //        logger.debug("转了之后的时间：", LocalDateTime.from());

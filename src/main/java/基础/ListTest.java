@@ -249,4 +249,12 @@ String a = "1";
         }
         return Boolean.FALSE;
     }
+
+    @Test
+    public void testListRetainAll(){
+        List<Integer> list = new LinkedList(Arrays.asList(2,3));
+        List list1 =  new LinkedList(Arrays.asList(1,2,5));
+        list.retainAll(list1);
+        System.out.println(list);
+    }
 }
