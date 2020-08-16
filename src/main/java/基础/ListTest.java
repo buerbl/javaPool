@@ -257,4 +257,10 @@ String a = "1";
         list.retainAll(list1);
         System.out.println(list);
     }
+
+    @Test
+    public void test21(){
+        List<Integer> list  = new LinkedList<>(Arrays.asList(1, 3, 4, 8));
+        Iterator<Integer> iterator = list.iterator();
+    }
 }

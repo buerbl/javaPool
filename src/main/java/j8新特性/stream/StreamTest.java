@@ -172,4 +172,42 @@ public class StreamTest {
     }
 
 
-}
+    @Test
+    public void testMatch(){
+        List<Employee> employees = Arrays.asList(
+                new Employee("张三", 18 ,9999.99, Employee.Status.FREE),
+                new Employee("李四", 38, 5555.99, Employee.Status.BUSY),
+                new Employee("王五", 50, 6666.66, Employee.Status.VOCATION),
+                new Employee("赵六", 16, 3333.33, Employee.Status.FREE),
+                new Employee("田七", 8, 7777.77, Employee.Status.BUSY)
+        );
+        //allMatch---检查是否匹配所有元素
+        boolean b1 = employees.stream()
+                .allMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
+        System.out.println(b1);
+
+        //anyMatch---检查是否至少匹配一个元素
+        boolean b2 = employees.stream()
+                .anyMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
+        System.out.println(b2);
+
+
+    }
+
+    @Data
+    @AllArgsConstructor
+    static class Employee {
+
+        private String name;
+        private Integer age;
+        private Double salary;
+        private Status status;
+
+         enum Status{
+            FREE,
+            BUSY,
+            VOCATION;
+        }
+    }
+
+    }
