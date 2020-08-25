@@ -162,4 +162,10 @@ public class OptionalTest {
     }
 
 
+    @Test
+    public void test4(){
+        String s = null;
+        Optional.ofNullable(s).ifPresent(p->p="1");
+        System.out.println(s);
+    }
 }
