@@ -2,10 +2,10 @@ package 基础;
 
 import com.google.common.collect.Maps;
 import org.junit.Test;
+import org.springframework.util.StopWatch;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Author 布尔bl
@@ -65,6 +65,28 @@ public class MapTest {
         values.forEach(s-> System.out.println(s));
 
 
+
+    }
+
+    @Test
+    public void testMapAndList(){
+        List<Integer> list = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        int time = 11;
+        for (int i = 0; i < time; i ++){
+            list.add(i);
+            map.put(i,i);
+        }
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start("list");
+        Integer integer1 = list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);
+        stopWatch.stop();
+//        System.out.println(stopWatch.getTotalTimeMillis());
+        stopWatch.start("map");
+        Integer integer = map.get(10);
+        stopWatch.stop();
+//        System.out.println(stopWatch.getTotalTimeMillis());
+        System.out.println(stopWatch.prettyPrint());
 
     }
 }
