@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -194,6 +191,27 @@ public class StreamTest {
 
     }
 
+    @Test
+    public void testListToMap(){
+        ArrayList<Integer> integers = new ArrayList<>(Arrays.asList(1, 3, 6, 6, 7, 8));
+        List<Employee> list = new ArrayList<>();
+        Employee chen1 = new Employee("chen", 18, 18.00D, Employee.Status.BUSY);
+        Employee chen2 = new Employee("chen", 19, 18.00D, Employee.Status.BUSY);
+        list.add(chen1);list.add(chen2);
+        Map<String, List<Employee>> map = list.stream().collect(Collectors.groupingBy(Employee::getName));
+        map.forEach((k,v)-> System.out.println(k+"&&"+v));
+        System.out.println(map);
+    }
+
+
+    @Test
+    public void testListPutMap(){
+        ArrayList<Integer> integers = new ArrayList<>(Arrays.asList(1, 3, 6, 6, 7, 8));
+        Map<Integer, List<Integer>> map = new HashMap();
+        map.put(1, integers);
+        map.get(1);
+
+    }
     @Data
     @AllArgsConstructor
     static class Employee {
