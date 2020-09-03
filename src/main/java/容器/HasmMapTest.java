@@ -106,5 +106,17 @@ public class HasmMapTest {
 //        hashMap.forEach((K,V)-> System.out.println(K+"&"+V));
     }
 
+    @Test
+    public void testDemoDto(){
+        DemoDto demoDto = new DemoDto("chen", "shenzhen");
+        DemoDto demoDto1 = new DemoDto("chen", null);
+        HashMap<DemoDto, String> stringHashMap = new HashMap<>();
+        stringHashMap.put(demoDto, "a");
+        stringHashMap.put(demoDto1, "b");
+        stringHashMap.forEach((k, v) -> System.out.println(k+"&&"+v));
+        System.out.println("=======================");
+        System.out.println(stringHashMap.get(new DemoDto("chen", null)));
+    }
+
 
 }
