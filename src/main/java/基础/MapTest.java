@@ -79,13 +79,18 @@ public class MapTest {
         }
         StopWatch stopWatch = new StopWatch();
         stopWatch.start("list");
-        Integer integer1 = list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);
+        list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);
+        list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);
+        list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0)
+        ;list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);
+        list.stream().filter(l -> l.equals(10)).collect(Collectors.toList()).get(0);
+
+
+
         stopWatch.stop();
-//        System.out.println(stopWatch.getTotalTimeMillis());
         stopWatch.start("map");
         Integer integer = map.get(10);
         stopWatch.stop();
-//        System.out.println(stopWatch.getTotalTimeMillis());
         System.out.println(stopWatch.prettyPrint());
 
     }

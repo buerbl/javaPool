@@ -4,10 +4,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Author buer
@@ -116,6 +114,15 @@ public class HasmMapTest {
         stringHashMap.forEach((k, v) -> System.out.println(k+"&&"+v));
         System.out.println("=======================");
         System.out.println(stringHashMap.get(new DemoDto("chen", null)));
+    }
+
+    @Test
+    public void testDemoDtoLambda(){
+        DemoDto demoDto = new DemoDto("chen", "shenzhen");
+        DemoDto demoDto1 = new DemoDto("chen", null);
+        ArrayList<DemoDto> arrayList = new ArrayList<>(Arrays.asList(demoDto, demoDto1));
+        Map<DemoDTO1, DemoDto> collect = arrayList.stream().collect(Collectors.toMap(d -> new DemoDTO1(d.getName(), d.getAdress()), e -> e));
+        HashMap<DemoDto, String> stringHashMap = new HashMap<>();
     }
 
 
