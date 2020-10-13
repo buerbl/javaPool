@@ -1,5 +1,7 @@
 package 数据结构;
 
+import java.util.Objects;
+
 /**
  * @Description:
  * @Author: boolean
@@ -8,20 +10,38 @@ package 数据结构;
 public class Node {
     private int value;
     private Node next;
+    private Node head;
 
     public Node(int value){
         this.value = value;
     }
 
+    public Node(){}
+
+    public  void add(int value){
+        Node node = new Node(value);
+        if (Objects.isNull(head)){
+            head = node;
+            return ;
+        }
+        Node tmp = head;
+        while (Objects.nonNull(tmp.next)){
+            tmp = tmp.next;
+        }
+        tmp.next = node;
+    }
+
+
     public static void main(String[] args) {
-        Node node = new Node(1);
-        node.next = new Node(2);
-        node.next.next = new Node(3);
-//        System.out.println(node.toString());
-//        while (node != null){
-//            System.out.println(node.value);
-//            node = node.next;
-//        }
+        Node node = new Node();
+        node.add(1);
+        node.add(12);
+        node.add(3);
+        node.add(4);
+        while (node.head != null){
+            System.out.println(node.head.value);
+            node.head = node.head.next;
+        }
 
 
 
