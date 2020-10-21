@@ -11,8 +11,9 @@ import org.junit.Test;
 @Data
 public final class FinalTest {
     private String name;
+
     @Test
-    public  void main(String[] args) {
+    public  void r() {
         FinalTest finalTest = new FinalTest();
         System.out.println(System.identityHashCode(finalTest));
         finalTest = new FinalTest();
@@ -28,6 +29,14 @@ public final class FinalTest {
     private void change(final String s){
 //        s="d";
     }
+
+    @Test
+    public void test1(){
+        int i = 0;
+        i++;
+        System.out.println(i);
+    }
+
 }
 
 

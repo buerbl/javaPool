@@ -11,14 +11,7 @@ public class MyException {
     }
 
     private String test1(){
-        try {
-//            return "z";
-            throw new RuntimeException("ss");
-        }finally {
-            throw new RuntimeException("ss1");
-
-        }
-//        return "v";
+        throw new MyPlusException("ss");
     }
 
     @Test

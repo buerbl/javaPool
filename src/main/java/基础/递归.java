@@ -1,8 +1,6 @@
 package 基础;
 
 import org.junit.Test;
-import sun.rmi.runtime.Log;
-//import sun.rmi.runtime.Log;
 
 /**
  * @Author: boolean
@@ -12,7 +10,7 @@ import sun.rmi.runtime.Log;
 public class 递归 {
     @Test
     public void test(){
-        System.out.println(F(10));;
+        System.out.println(F(10));
 
     }
 
@@ -23,9 +21,6 @@ public class 递归 {
         }
         //递归公式
         return F(n-1) + F(n-2);
-
-
-
     }
 }
 

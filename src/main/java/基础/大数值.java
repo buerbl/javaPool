@@ -14,7 +14,6 @@ import java.util.*;
 public class 大数值 {
     @Test
     public void test(){
-        int a = 100;
         BigInteger bigInteger1 = BigInteger.valueOf(100);
         BigInteger bigInteger2 = BigInteger.valueOf(200);
         System.out.println("大数值之整形：" + bigInteger1);
