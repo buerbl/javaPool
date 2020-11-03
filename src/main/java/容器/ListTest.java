@@ -1,5 +1,6 @@
 package 容器;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.beans.Transient;
@@ -105,5 +106,12 @@ public class ListTest {
         System.out.println(collect);
     }
 
+    @Test
+    public void testAddAll(){
+        ArrayList<Integer> list1 = Lists.newArrayList(3, 5, 67, 7);
+        ArrayList<Integer> list2 = Lists.newArrayList(4, 8, 0, 9);
+        list1.addAll(list2);
+        list1.forEach(System.out::println);
 
+    }
 }
