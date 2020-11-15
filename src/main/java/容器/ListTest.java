@@ -1,5 +1,6 @@
 package 容器;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.beans.Transient;
@@ -106,4 +107,13 @@ public class ListTest {
     }
 
 
+    /**
+     * 添加在list最前面
+     */
+    @Test
+    public void test3(){
+        ArrayList<Integer> integers = Lists.newArrayList(1, 356, 7, 9);
+        integers.add(0, 0);
+        System.out.println(Arrays.toString(new ArrayList[]{integers}));
+    }
 }
