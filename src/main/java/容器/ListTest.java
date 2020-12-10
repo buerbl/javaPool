@@ -107,11 +107,19 @@ public class ListTest {
     }
 
     @Test
-    public void testAddAll(){
+    public void testAddAll() {
         ArrayList<Integer> list1 = Lists.newArrayList(3, 5, 67, 7);
         ArrayList<Integer> list2 = Lists.newArrayList(4, 8, 0, 9);
         list1.addAll(list2);
         list1.forEach(System.out::println);
-
+    }
+    /**
+     * 添加在list最前面
+     */
+    @Test
+    public void test3(){
+        ArrayList<Integer> integers = Lists.newArrayList(1, 356, 7, 9);
+        integers.add(0, 0);
+        System.out.println(Arrays.toString(new ArrayList[]{integers}));
     }
 }

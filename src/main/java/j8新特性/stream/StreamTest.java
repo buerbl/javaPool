@@ -1,12 +1,15 @@
 package j8新特性.stream;
 
+import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import 抽象类.Emplyee;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -173,11 +176,11 @@ public class StreamTest {
 	@Test
 	public void testMatch() {
 		List<Employee> employees = Arrays.asList(
-				new Employee("张三", 18, 9999.99, Employee.Status.FREE),
-				new Employee("李四", 38, 5555.99, Employee.Status.BUSY),
-				new Employee("王五", 50, 6666.66, Employee.Status.VOCATION),
-				new Employee("赵六", 16, 3333.33, Employee.Status.FREE),
-				new Employee("田七", 8, 7777.77, Employee.Status.BUSY)
+//				new Employee("张三", 18, 9999.99, Employee.Status.FREE),
+//				new Employee("李四", 38, 5555.99, Employee.Status.BUSY),
+//				new Employee("王五", 50, 6666.66, Employee.Status.VOCATION),
+//				new Employee("赵六", 16, 3333.33, Employee.Status.FREE),
+//				new Employee("田七", 8, 7777.77, Employee.Status.BUSY)
 		);
 		//allMatch---检查是否匹配所有元素
 		boolean b1 = employees.stream()
@@ -194,15 +197,15 @@ public class StreamTest {
 
 	@Test
 	public void testListToMap() {
-		ArrayList<Integer> integers = new ArrayList<>(Arrays.asList(1, 3, 6, 6, 7, 8));
-		List<Employee> list = new ArrayList<>();
-		Employee chen1 = new Employee("chen", 18, 18.00D, Employee.Status.BUSY);
-		Employee chen2 = new Employee("chen", 19, 18.00D, Employee.Status.BUSY);
-		list.add(chen1);
-		list.add(chen2);
-		Map<String, List<Employee>> map = list.stream().collect(Collectors.groupingBy(Employee::getName));
-		map.forEach((k, v) -> System.out.println(k + "&&" + v));
-		System.out.println(map);
+//		ArrayList<Integer> integers = new ArrayList<>(Arrays.asList(1, 3, 6, 6, 7, 8));
+//		List<Employee> list = new ArrayList<>();
+//		Employee chen1 = new Employee("chen", 18, 18.00D, Employee.Status.BUSY);
+//		Employee chen2 = new Employee("chen", 19, 18.00D, Employee.Status.BUSY);
+//		list.add(chen1);
+//		list.add(chen2);
+//		Map<String, List<Employee>> map = list.stream().collect(Collectors.groupingBy(Employee::getName));
+//		map.forEach((k, v) -> System.out.println(k + "&&" + v));
+//		System.out.println(map);
 	}
 
 
@@ -229,7 +232,7 @@ public class StreamTest {
 	static class Employee {
 
 		private String name;
-		private Integer age;
+		private BigDecimal age;
 		private Double salary;
 		private Status status;
 
@@ -238,5 +241,15 @@ public class StreamTest {
 			BUSY,
 			VOCATION;
 		}
+	}
+
+
+	@Test
+	public void testMapCount(){
+		ArrayList<Employee> chen = Lists.newArrayList(new Employee("chen", BigDecimal.valueOf(-1), 1d, Employee.Status.FREE),
+				new Employee("chen1", BigDecimal.valueOf(11), 11d, Employee.Status.FREE),
+				new Employee("chen2", BigDecimal.valueOf(12), 12d, Employee.Status.FREE));
+		BigDecimal reduce = chen.stream().map(Employee::getAge).reduce(BigDecimal.ZERO, BigDecimal::add);
+		System.out.println(reduce);
 	}
 }

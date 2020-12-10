@@ -38,6 +38,12 @@ public class Node {
         node.add(12);
         node.add(3);
         node.add(4);
+        node.add(4);
+        node.add(8);
+        print(node);
+    }
+
+    private static void print(Node node) {
         while (node.head != null){
             System.out.println(node.head.value);
             node.head = node.head.next;
