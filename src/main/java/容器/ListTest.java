@@ -1,6 +1,8 @@
 package 容器;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
+import com.google.gson.Gson;
 import org.junit.Test;
 
 import java.beans.Transient;
@@ -121,5 +123,22 @@ public class ListTest {
         ArrayList<Integer> integers = Lists.newArrayList(1, 356, 7, 9);
         integers.add(0, 0);
         System.out.println(Arrays.toString(new ArrayList[]{integers}));
+    }
+    @Test
+    public void testContains(){
+        ArrayList<Integer> list = Lists.newArrayList(1, 4, 6);
+        System.out.println(list.contains(1));
+        System.out.println(list.contains(2));
+    }
+
+
+    @Test
+    public void testOrder(){
+        User build = User.builder().msg("11").type("1").build();
+        User build1 = User.builder().msg("33").type("3").build();
+        User build2 = User.builder().msg("11").type("1").build();
+        ArrayList<User> users = Lists.newArrayList(build, build1, build2);
+        List<User> collect = users.stream().sorted(Comparator.comparing(User::getType)).collect(Collectors.toList());
+        System.out.println(new Gson().toJson(collect));
     }
 }

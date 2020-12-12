@@ -80,13 +80,11 @@ public class HasmMapTest {
 
     @Test
     public void putHashMap(){
-        HashMap map = new HashMap();
+        HashMap<String, Integer> map = new HashMap<>();
         map.put("5", 1);
         map.put("1",3);
         map.put("7",6);
         map.forEach((K,V)-> System.out.println(K+"&"+V));
-//        map.forEach();
-
     }
 
     /**

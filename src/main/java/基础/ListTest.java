@@ -2,11 +2,8 @@ package 基础;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
-import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 

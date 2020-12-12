@@ -227,6 +227,11 @@ public class StreamTest {
 
 	}
 
+	@Test
+	public void testJoin(){
+
+	}
+
 	@Data
 	@AllArgsConstructor
 	static class Employee {
