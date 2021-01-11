@@ -3,6 +3,7 @@ package 基础;
 import org.apache.poi.hpsf.Array;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.*;
 
@@ -33,6 +34,15 @@ public class 大数值 {
 //        map.forEach((k,v)->{
 //            System.out.println(k+"&"+v);
 //        });
+
+    }
+
+    @Test
+    public void test1(){
+        BigDecimal bigDecimal = BigDecimal.valueOf(3);
+        BigDecimal bigDecimal1 = BigDecimal.valueOf(5);
+        bigDecimal1 = null;
+        System.out.println(bigDecimal.compareTo(bigDecimal1));
 
     }
 }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 import 抽象类.Emplyee;
 
@@ -123,6 +124,13 @@ public class StreamTest {
 	}
 
 	@Test
+	public void test11() {
+		Student chen = Student.builder().age(1).id(1).name("chen").build();
+		List<Student> list = new LinkedList<>();
+		list.stream().filter(student -> Objects.nonNull(student.getAge())).collect(Collectors.toList());
+	}
+
+	@Test
 	public void testMap() {
 		List<O1> o1List = Arrays.asList(new O1("CHEN1", "深圳1", 1),
 				new O1("CHEN2", "深圳2", 1),
@@ -137,6 +145,7 @@ public class StreamTest {
 		log.info(new Gson().toJson(uList));
 
 	}
+
 
 	@Test
 	public void testSort() {
@@ -228,7 +237,7 @@ public class StreamTest {
 	}
 
 	@Test
-	public void testJoin(){
+	public void testJoin() {
 
 	}
 
@@ -250,11 +259,38 @@ public class StreamTest {
 
 
 	@Test
-	public void testMapCount(){
+	public void testMapCount() {
 		ArrayList<Employee> chen = Lists.newArrayList(new Employee("chen", BigDecimal.valueOf(-1), 1d, Employee.Status.FREE),
 				new Employee("chen1", BigDecimal.valueOf(11), 11d, Employee.Status.FREE),
 				new Employee("chen2", BigDecimal.valueOf(12), 12d, Employee.Status.FREE));
 		BigDecimal reduce = chen.stream().map(Employee::getAge).reduce(BigDecimal.ZERO, BigDecimal::add);
 		System.out.println(reduce);
 	}
+
+	@Test
+	public void testEmptyCollection() {
+		LinkedList<String> list = new LinkedList<>();
+		list.forEach(s -> System.out.println(111));
+	}
+
+	@Test
+	public void testNUll(){
+		String a = null;
+	}
+
+
+	@Test
+	public void testBigDemical(){
+		BigDecimal bigDecimal = BigDecimal.valueOf(1);
+		BigDecimal bigDecimal1 = BigDecimal.valueOf(0);
+		bigDecimal.divide(bigDecimal1);
+	}
+
+	@Test
+	public void testBigDemicalZero(){
+		BigDecimal zero = BigDecimal.ZERO;
+		System.out.println(zero);
+
+	}
+
 }

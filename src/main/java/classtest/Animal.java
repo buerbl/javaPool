@@ -11,16 +11,13 @@ import org.junit.Test;
  */
 @Getter
 @Setter
- public class Animal {
+public class Animal {
     private int id;
-    String name="chen";
-    protected String parent="chen";
-    public String test="chen";
+    String name = "chen";
+    protected String parent = "chen";
+    public String test = "chen";
 
-
-
-
-    //    //两个构造器，按照需要调用
+    //两个构造器，按照需要调用
 //    public  Animal(){
 //    }
 //    public Animal(int id, String name, String parent) {
@@ -30,9 +27,9 @@ import org.junit.Test;
 //    }
 
     @Test
-    public void eat(){
+    public void eat() {
 
-        Animal animal  = new Animal();
+        Animal animal = new Animal();
         System.out.println(animal.name);
     }
 }
