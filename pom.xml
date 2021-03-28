@@ -110,11 +110,6 @@
         </dependency>
 
         <dependency>
-            <groupId> e-iceblue </groupId>
-            <artifactId>spire.pdf</artifactId>
-            <version>3.4.2</version>
-        </dependency>
-        <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
             <version>5.5.13</version>
@@ -125,11 +120,4 @@
             <version>5.2.0</version>
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>com.e-iceblue</id>
-            <url>http://repo.e-iceblue.cn/repository/maven-public/</url>
-        </repository>
-    </repositories>
-
 </project>
