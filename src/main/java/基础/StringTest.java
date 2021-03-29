@@ -144,12 +144,23 @@ public class StringTest {
     }
 
     @Test
-    public void testTwoString(){
+    public void testTwoString() {
         String a = "a";
         String b = "a";
-        System.out.println(a==b);
+        System.out.println(a == b);
         String c = "b";
         String d = new String("b");
-        System.out.println(c==d);
+        System.out.println(c == d);
     }
+
+
+    // 字符串替换
+    @Test
+    public void testReplace() {
+        String str = "beldfklsdfsbekdkfnksdfbe";
+        System.out.println(str.replace("be", "**"));
+        System.out.println(str.replaceFirst("be", "**"));
+    }
+
+
 }

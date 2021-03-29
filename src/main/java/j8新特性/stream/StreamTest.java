@@ -1,7 +1,9 @@
 package j8新特性.stream;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
+import j8新特性.Person;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -290,6 +292,17 @@ public class StreamTest {
 	public void testBigDemicalZero(){
 		BigDecimal zero = BigDecimal.ZERO;
 		System.out.println(zero);
+
+	}
+
+	@Test
+	public void testYin(){
+		Person person = new Person();
+		person.setMgs("1");
+		person.setName("3");
+		ArrayList<Person> list = Lists.newArrayList(person);
+		List<Person> collect = list.stream().filter(s -> Objects.equals("3", s.getName())).collect(Collectors.toList());
+		System.out.println(JSON.toJSON(collect));
 
 	}
 

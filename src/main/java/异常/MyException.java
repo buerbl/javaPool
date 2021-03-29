@@ -18,4 +18,18 @@ public class MyException {
     public void test2(){
         throw new RuntimeException("sa");
     }
+
+    @Test
+    public void test3(){
+        try {
+            try {
+                test2();
+            }catch (Exception E){
+
+            }
+            System.out.println(1);
+        }catch (Exception e){
+
+        }
+    }
 }

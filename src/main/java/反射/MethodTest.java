@@ -15,31 +15,32 @@ public class MethodTest {
             Method test = clazz.getMethod("test", Integer.class);
             test.invoke(clazz.newInstance(),0);
         } catch (NoSuchMethodException e) {
-            log.error("错误1为{}", e);
+            log.error("错误1为", e);
         } catch  (IllegalAccessException e) {
-            log.error("错误2为{}", e);
+            log.error("错误2为", e);
         }
         catch (InvocationTargetException e) {
-            log.error("错误3为{}", e);
+            log.error("错误3为", e);
             throw e;
         } catch  (InstantiationException e) {
-            log.error("错误4为{}", e);
+            log.error("错误4为", e);
         }
     }
 
     @Test
-    public void test2(){
-        try {
+    public void test2() throws InvocationTargetException {
             test1();
-        } catch (InvocationTargetException e) {
-            log.error("错误3111为{}", e);
-        }
     }
 
 
 
     public void test(Integer num){
         int i = 1 / num;
+    }
+
+    @Test
+    public void testProxy(){
+        System.out.println(212);
     }
 
 
