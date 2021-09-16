@@ -13,10 +13,13 @@ import org.junit.Test;
 import 抽象类.Emplyee;
 
 import java.math.BigDecimal;
+import java.sql.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * @Author: boolean
@@ -138,13 +141,15 @@ public class StreamTest {
 				new O1("CHEN2", "深圳2", 1),
 				new O1("CHNE3", "深圳3", 1),
 				new O1("CHEN", "深圳4", 1));
-		List<U> uList = o1List.stream().map(o -> {
-			U u1 = new U();
-			u1.setAdress(o.getAdress());
-			u1.setName(o.getName());
-			return u1;
-		}).collect(Collectors.toList());
-		log.info(new Gson().toJson(uList));
+//		List<U> uList = o1List.stream().map(o -> {
+//			U u1 = new U();
+//			u1.setAdress(o.getAdress());
+//			u1.setName(o.getName());
+//			return u1;
+//		}).collect(Collectors.toList());
+//		log.info(new Gson().toJson(uList));
+
+//		o1List.stream().map(O1::getAdress).map(O)
 
 	}
 
@@ -187,11 +192,11 @@ public class StreamTest {
 	@Test
 	public void testMatch() {
 		List<Employee> employees = Arrays.asList(
-//				new Employee("张三", 18, 9999.99, Employee.Status.FREE),
-//				new Employee("李四", 38, 5555.99, Employee.Status.BUSY),
-//				new Employee("王五", 50, 6666.66, Employee.Status.VOCATION),
-//				new Employee("赵六", 16, 3333.33, Employee.Status.FREE),
-//				new Employee("田七", 8, 7777.77, Employee.Status.BUSY)
+				new Employee("张三", 18, 9999.99, Employee.Status.FREE),
+				new Employee("李四", 38, 5555.99, Employee.Status.BUSY),
+				new Employee("王五", 50, 6666.66, Employee.Status.VOCATION),
+				new Employee("赵六", 16, 3333.33, Employee.Status.FREE),
+				new Employee("田七", 8, 7777.77, Employee.Status.BUSY)
 		);
 		//allMatch---检查是否匹配所有元素
 		boolean b1 = employees.stream()
@@ -200,7 +205,7 @@ public class StreamTest {
 
 		//anyMatch---检查是否至少匹配一个元素
 		boolean b2 = employees.stream()
-				.anyMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
+				.anyMatch((e) -> e.getStatus().equals(Employee.Status.FREE));
 		System.out.println(b2);
 
 
@@ -248,7 +253,7 @@ public class StreamTest {
 	static class Employee {
 
 		private String name;
-		private BigDecimal age;
+		private int age;
 		private Double salary;
 		private Status status;
 
@@ -262,11 +267,11 @@ public class StreamTest {
 
 	@Test
 	public void testMapCount() {
-		ArrayList<Employee> chen = Lists.newArrayList(new Employee("chen", BigDecimal.valueOf(-1), 1d, Employee.Status.FREE),
-				new Employee("chen1", BigDecimal.valueOf(11), 11d, Employee.Status.FREE),
-				new Employee("chen2", BigDecimal.valueOf(12), 12d, Employee.Status.FREE));
-		BigDecimal reduce = chen.stream().map(Employee::getAge).reduce(BigDecimal.ZERO, BigDecimal::add);
-		System.out.println(reduce);
+//		ArrayList<Employee> chen = Lists.newArrayList(new Employee("chen", BigDecimal.valueOf(-1), 1d, Employee.Status.FREE),
+//				new Employee("chen1", BigDecimal.valueOf(11), 11d, Employee.Status.FREE),
+//				new Employee("chen2", BigDecimal.valueOf(12), 12d, Employee.Status.FREE));
+//		BigDecimal reduce = chen.stream().map(Employee::getAge).reduce(BigDecimal.ZERO, BigDecimal::add);
+//		System.out.println(reduce);
 	}
 
 	@Test
@@ -303,7 +308,13 @@ public class StreamTest {
 		ArrayList<Person> list = Lists.newArrayList(person);
 		List<Person> collect = list.stream().filter(s -> Objects.equals("3", s.getName())).collect(Collectors.toList());
 		System.out.println(JSON.toJSON(collect));
+	}
 
+	@Test
+	public void testFlatMap(){
+		ArrayList<ArrayList<Integer>> lists = Lists.newArrayList(Lists.newArrayList(1), Lists.newArrayList(3, 4), Lists.newArrayList(13), Lists.newArrayList(1));
+		List<Integer> collect = lists.stream().flatMap(Collection::stream).collect(Collectors.toList());
+		assertEquals(lists, collect);
 	}
 
 }

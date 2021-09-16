@@ -7,6 +7,7 @@ import org.checkerframework.checker.units.qual.s;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -51,5 +52,32 @@ public class 数组 {
         for (int i : a){
             System.out.println(i);
         }
+    }
+
+
+    /**
+     * 遍历二维数组的所有元素并求元素和与平均数
+     * @param array
+     */
+    public static void bl1(int[][] array){
+        int i, sum = 0, j = 0;
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array.length+1; j++) {
+                System.out.println(array[i][j]);
+                sum += array[i][j];
+            }
+        }
+        int t = i + j + 1;
+        System.out.println(sum);
+        System.out.println((double)sum / t);
+    }
+
+    @Test
+    public void test3dArray(){
+        int [][] arr = new int[3][];
+        arr[0]=new int[]{1, 3, 4,4};
+        arr[1]=new int[]{1,  4,4};
+        arr[2] = new int[]{};
+        System.out.println(Arrays.deepToString(arr));
     }
 }

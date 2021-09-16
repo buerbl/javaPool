@@ -123,5 +123,9 @@ public class HasmMapTest {
         HashMap<DemoDto, String> stringHashMap = new HashMap<>();
     }
 
+    @Test
+    public void testInitMap(){
+        HashMap<Object, Object> map = new HashMap();
+    }
 
 }
