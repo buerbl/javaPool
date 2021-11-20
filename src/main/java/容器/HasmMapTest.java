@@ -127,5 +127,16 @@ public class HasmMapTest {
     public void testInitMap(){
         HashMap<Object, Object> map = new HashMap();
     }
+    @Test
+    public void testMapValue(){
+       List<String> list = new LinkedList<>();
+       list = null;
+       for (String s : list){
+           System.out.println(111);
+       }
+
+
+    }
+
 
 }

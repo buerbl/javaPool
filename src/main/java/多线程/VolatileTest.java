@@ -6,28 +6,24 @@ package 多线程;
  * @Author: boolean volatile关键字的测试
  * @Date: 2019/11/24 18:02
  */
-public class VolatileTest implements Runnable{
-    private static VolatileTest volatileTest = new VolatileTest();
-    private  static volatile int i= 0;
+public class VolatileTest implements Runnable {
+    private static volatile boolean single = true;
+        // 改例子说明了volatile的可见性，类变量不见他的话就出不来了
     public static void main(String[] args) throws InterruptedException {
-        for (int j = 0; j < 20; j++) {
-            Thread a = new Thread(new VolatileTest());
-            Thread b = new Thread(new VolatileTest());
-            a.start();b.start();
-            a.join();b.join();
-            System.out.print(i+"&&");
-        }
+        Thread a = new Thread(new VolatileTest());
+        a.start();
+        Thread.sleep(100);
+        single = false;
+        System.out.println("start");
 
     }
 
     @Override
     public void run() {
-//        synchronized (volatileTest){
-            for (int j = 0; j < 1000; j++) {
-                i++;
-            }
-//        }
+        while (single){
 
+        }
+        System.out.println("end");
     }
 }
 

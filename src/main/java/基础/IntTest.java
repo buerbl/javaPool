@@ -54,4 +54,15 @@ public   class IntTest {
     public void test3(){
         System.out.println(tets());
     }
+
+    @Test
+    public void testTe(){
+        String regEx = "[\\n`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。， 、？]";
+//        String str = "浙江省";
+        String str = "上海市》---。。.~`>.>>.自治区";
+
+        String newString = str.replaceAll(regEx, "");//不想保留原来的字符串可以直接写成 “str =
+
+        System.out.println(newString);
+    }
 }
