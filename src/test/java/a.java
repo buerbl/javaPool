@@ -41,7 +41,10 @@ public class a {
 
     @Test
     public void tets(){
+        int i = 1;
+
         System.out.println(0.3 - 0.2 == 0.1);
+        System.out.println(i);
     }
 
 
