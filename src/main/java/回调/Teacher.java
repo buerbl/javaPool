@@ -2,6 +2,7 @@ package 回调;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.junit.Test;
 import 回调.Callback;
 import 回调.Student;
 
@@ -22,5 +23,4 @@ public class Teacher implements Callback {
     public void tellAnswer(int answer) {
         System.out.println("知道了，你的答案是" + answer);
     }
-
 }

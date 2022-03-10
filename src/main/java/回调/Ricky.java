@@ -1,7 +1,7 @@
 package 回调;
 
 /**
- * 一个名叫Ricky的同学解决老师提出的问题，原文出处http://www.cnblogs.com/xrq730/p/6424471.html
+ * 一个名叫Ricky的同学解决老师提出的问题，原文出处http://www.cnblogs.com/xrq730/p/6424471.html constructor
  */
 public class Ricky implements Student {
 

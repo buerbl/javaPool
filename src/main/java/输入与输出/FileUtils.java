@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import javax.xml.soap.SAAJResult;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @Description:
@@ -26,7 +27,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         }
         File descDir = new File(descDirNames);
         if (descDir.exists()){
-            log.info("目录"+ descDirNames + "已经存在了");
+            log.info("目录："+ descDir.getAbsolutePath() + "已经存在了");
             return false;
         }
 
@@ -48,6 +49,18 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
     public void tetsCreat(){
         createDirectory("hello");
 
+    }
+
+    @Test
+    public void testZip(){
+        File file = new File("test.zip");
+        if(!file.exists()){
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 

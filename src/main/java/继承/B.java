@@ -31,6 +31,8 @@ public class B extends A {
     @Test
     public void test1(A a){
         System.out.println(a.toString());
+        B b = (B) a;
+        System.out.println(b.getB());
     }
 }
 

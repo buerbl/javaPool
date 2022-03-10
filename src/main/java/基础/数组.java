@@ -80,4 +80,10 @@ public class 数组 {
         arr[2] = new int[]{};
         System.out.println(Arrays.deepToString(arr));
     }
+
+    @Test
+    public void testif(){
+        String[] s = new String[]{1==2?"2":"4"};
+        System.out.println(Arrays.deepToString(s));
+    }
 }

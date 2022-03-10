@@ -9,7 +9,6 @@ import org.junit.Test;
  */
 public class ThreadLocalTest {
 
-    private static ThreadLocal<Integer> threadLocal = ThreadLocal.withInitial(() -> 1);
     @Test
     public void test(){
         System.out.println(this);
@@ -18,9 +17,23 @@ public class ThreadLocalTest {
 
     @Test
     public void test1(){
+        ThreadLocal<Integer> threadLocal = ThreadLocal.withInitial(() -> 1);
+        int i = 0;
+        while (true){
 
-        threadLocal.set(2);
-        System.out.println(threadLocal.get());
+            new Thread(()-> {
+                threadLocal.set(100);
+
+                System.out.println("主："+threadLocal.get());
+            }).start();
+
+            i++;
+            System.out.println("子："+threadLocal.get());
+            if (i == 5000){
+                break;
+            }
+        }
+
     }
 
 

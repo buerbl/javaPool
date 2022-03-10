@@ -55,4 +55,9 @@ public class HashSetTest {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         System.out.println(availableProcessors);
     }
+
+    @Test
+    public void test2(){
+        LinkedList[] linkedLists = new LinkedList[1] ;
+    }
 }

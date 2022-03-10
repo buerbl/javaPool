@@ -5,8 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -73,5 +75,31 @@ public class ThreadPoolTest {
         System.out.println(new Gson().toJson(list));
         log.info(stopWatch.prettyPrint());
         System.out.println("我是主线程");
+    }
+
+    @Test
+    public void test3(){
+        String str = "我是[%s]";
+        String s = String.format(str, "电影院");
+        System.out.println(s);
+        System.out.println(String.format("我是[%s],你是[%s], 他是[%s]", "我", "你", "他"));
+    }
+
+    @Test
+    public void test4() throws InterruptedException {
+        List<String> list = new ArrayList<String>();
+        System.out.println("bein");
+        for (int i = 0; i < 10; i++) {
+            Thread thread = new Thread(() -> {
+                for (int j = 0; j < 10000; j++) {
+                    Thread aa = new Thread(() -> list.add("AA"));
+                    aa.start();
+                }
+            });
+            thread.start();
+            thread.join();
+            Thread.sleep(1000);//确保全部线程都执行完毕
+            System.out.println("列表大小：" + list.size());
+        }
     }
 }

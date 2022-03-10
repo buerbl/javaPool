@@ -8,6 +8,7 @@ import java.util.Arrays;
  * @Date: 2019/11/17 18:14
  */
 public abstract  class BaseSort {
+
     // for test
     public static void comparator(int[] arr) {
         Arrays.sort(arr);

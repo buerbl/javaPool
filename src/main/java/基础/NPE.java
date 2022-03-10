@@ -69,5 +69,22 @@ public class NPE {
         System.out.println(new Gson().toJson(b));
     }
 
+    @Test
+    public void testthis(){
+        System.out.println(this);
+    }
+
+    @Test
+    public void testthis1(){
+        NPE npe = new NPE();
+        NPE npe1 = new NPE();
+        NPE npe2 = new NPE();
+        npe.testthis();
+        npe.testthis();
+        npe1.testthis();
+        npe2.testthis();
+    }
+
+
 
 }

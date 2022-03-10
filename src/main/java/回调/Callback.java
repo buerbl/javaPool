@@ -1,5 +1,5 @@
 package 回调;
 
 public interface Callback {
-    public void tellAnswer(int answer);
+    void tellAnswer(int answer);
 }

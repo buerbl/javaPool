@@ -14,6 +14,7 @@ import java.util.Objects;
  * @description:
  */
 public class StringTest {
+    private String name = "chen";
     @Test
     public void repalceTest() {
         Integer a = 1;
@@ -160,6 +161,17 @@ public class StringTest {
         String str = "beldfklsdfsbekdkfnksdfbe";
         System.out.println(str.replace("be", "**"));
         System.out.println(str.replaceFirst("be", "**"));
+    }
+
+    @Test
+    public void testFinalString(){
+        System.out.println(invokeTestFinalString("ss"));
+        System.out.println(name);
+    }
+
+    public String invokeTestFinalString(String a){
+        name = a;
+        return name;
     }
 
 

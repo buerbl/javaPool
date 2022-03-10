@@ -2,6 +2,8 @@ package 基础;
 
 import org.junit.Test;
 
+import java.util.Collections;
+
 /**
  * @Description: for循环测试
  * <p>
@@ -12,13 +14,33 @@ import org.junit.Test;
 public class ForTest {
 
     @Test
-    public void main() {
+    public void test() {
         for (int i = 0; i < 10; i++) {
             System.out.println(-1);
             System.out.println("我是循环");
             return;
         }
         System.out.println("return后的位置");
+    }
+
+    @Test
+    public void testBreak() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(-1);
+            System.out.println("我是循环");
+            break;
+        }
+        System.out.println("break后的位置");
+    }
+
+    @Test
+    public void testContinue() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(-1);
+            System.out.println("我是循环");
+            continue;
+        }
+        System.out.println("continue后的位置");
     }
 
     @Test
@@ -47,9 +69,20 @@ public class ForTest {
     public void testDebugFor(){
         int times = 120;
         for (int i = 0; i < times; i ++){
-            System.out.println(i);
         }
     }
+
+    /**
+     * 结论 foreach即使空集合也不会导致空指针
+     */
+    @Test
+    public void testForList(){
+//        for (String p : Collections.emptyList()){
+//            System.out.println(11);
+//        }
+    }
+
+
 
 
 }
